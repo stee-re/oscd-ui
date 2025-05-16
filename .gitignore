@@ -1,0 +1,15 @@
+node_modules
+*.js
+!web-test-runner.config.js
+!commitlint.config.js
+*.css
+*-styles.ts
+*.map
+*.d.ts
+!types/*.d.ts
+.wireit/
+*.tsbuildinfo
+
+## editors
+/.idea
+/.vscode
