@@ -10,7 +10,6 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 import { CSSResultOrNative } from "lit";
-import { customElement } from "lit/decorators.js";
 
 import { Divider } from "@material/web/divider/internal/divider.js";
 import { styles } from "@material/web/divider/internal/divider-styles.js";
@@ -31,7 +30,6 @@ declare global {
  * @final
  * @suppress {visibility}
  */
-@customElement("oscd-divider")
 export class OscdDivider extends Divider {
   static override styles: CSSResultOrNative[] = [styles];
 }

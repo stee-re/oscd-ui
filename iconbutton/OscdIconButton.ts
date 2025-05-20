@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2022 Google LLC
+ * Copyright 2021 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -10,15 +10,13 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 import { CSSResultOrNative } from "lit";
-import { customElement } from "lit/decorators.js";
-
-import { styles } from "@material/web/iconbutton/internal/filled-tonal-styles.js";
 import { IconButton } from "@material/web/iconbutton/internal/icon-button.js";
 import { styles as sharedStyles } from "@material/web/iconbutton/internal/shared-styles.js";
+import { styles } from "@material/web/iconbutton/internal/standard-styles.js";
 
 declare global {
   interface HTMLElementTagNameMap {
-    "oscd-filled-tonal-icon-button": OscdFilledTonalIconButton;
+    "oscd-icon-button": OscdIconButton;
   }
 }
 
@@ -40,15 +38,13 @@ declare global {
  * @final
  * @suppress {visibility}
  */
-@customElement("oscd-filled-tonal-icon-button")
-export class OscdFilledTonalIconButton extends IconButton {
+export class OscdIconButton extends IconButton {
   static override styles: CSSResultOrNative[] = [sharedStyles, styles];
 
   protected override getRenderClasses() {
     return {
       ...super.getRenderClasses(),
-      "filled-tonal": true,
-      "toggle-filled-tonal": this.toggle,
+      standard: true,
     };
   }
 }

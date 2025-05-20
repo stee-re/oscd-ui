@@ -10,15 +10,13 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 import { CSSResultOrNative } from "lit";
-import { customElement } from "lit/decorators.js";
-
+import { styles } from "@material/web/iconbutton/internal/filled-styles.js";
 import { IconButton } from "@material/web/iconbutton/internal/icon-button.js";
-import { styles } from "@material/web/iconbutton/internal/outlined-styles.js";
 import { styles as sharedStyles } from "@material/web/iconbutton/internal/shared-styles.js";
 
 declare global {
   interface HTMLElementTagNameMap {
-    "oscd-outlined-icon-button": OscdOutlinedIconButton;
+    "oscd-filled-icon-button": OscdFilledIconButton;
   }
 }
 
@@ -40,14 +38,14 @@ declare global {
  * @final
  * @suppress {visibility}
  */
-@customElement("oscd-outlined-icon-button")
-export class OscdOutlinedIconButton extends IconButton {
+export class OscdFilledIconButton extends IconButton {
   static override styles: CSSResultOrNative[] = [sharedStyles, styles];
 
   protected override getRenderClasses() {
     return {
       ...super.getRenderClasses(),
-      outlined: true,
+      filled: true,
+      "toggle-filled": this.toggle,
     };
   }
 }

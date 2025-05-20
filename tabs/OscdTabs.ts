@@ -10,8 +10,6 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 import { CSSResultOrNative } from "lit";
-import { customElement } from "lit/decorators.js";
-
 import { Tabs } from "@material/web/tabs/internal/tabs.js";
 import { styles } from "@material/web/tabs/internal/tabs-styles.js";
 
@@ -27,7 +25,6 @@ declare global {
  * @final
  * @suppress {visibility}
  */
-@customElement("oscd-tabs")
 export class OscdTabs extends Tabs {
   static override styles: CSSResultOrNative[] = [styles];
 }

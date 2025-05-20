@@ -9,7 +9,7 @@ import "@material/web/iconbutton/icon-button.js";
 import "@material/web/icon/icon.js";
 import "@material/web/elevation/elevation.js";
 import { html } from "lit";
-import { useArgs } from "@storybook/client-api";
+import { useArgs } from "@storybook/preview-api";
 import type { Meta, StoryObj } from "@storybook/web-components";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories

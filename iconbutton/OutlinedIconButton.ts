@@ -1,6 +1,6 @@
 /**
  * @license
- * Copyright 2021 Google LLC
+ * Copyright 2022 Google LLC
  * SPDX-License-Identifier: Apache-2.0
  */
 
@@ -10,15 +10,13 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 import { CSSResultOrNative } from "lit";
-import { customElement } from "lit/decorators.js";
-
 import { IconButton } from "@material/web/iconbutton/internal/icon-button.js";
+import { styles } from "@material/web/iconbutton/internal/outlined-styles.js";
 import { styles as sharedStyles } from "@material/web/iconbutton/internal/shared-styles.js";
-import { styles } from "@material/web/iconbutton/internal/standard-styles.js";
 
 declare global {
   interface HTMLElementTagNameMap {
-    "oscd-icon-button": OscdIconButton;
+    "oscd-outlined-icon-button": OscdOutlinedIconButton;
   }
 }
 
@@ -40,14 +38,13 @@ declare global {
  * @final
  * @suppress {visibility}
  */
-@customElement("oscd-icon-button")
-export class OscdIconButton extends IconButton {
+export class OscdOutlinedIconButton extends IconButton {
   static override styles: CSSResultOrNative[] = [sharedStyles, styles];
 
   protected override getRenderClasses() {
     return {
       ...super.getRenderClasses(),
-      standard: true,
+      outlined: true,
     };
   }
 }

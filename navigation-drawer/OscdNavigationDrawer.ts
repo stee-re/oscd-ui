@@ -10,17 +10,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 import { css, CSSResult, CSSResultOrNative } from "lit";
-import { customElement } from "lit/decorators.js";
-
 import { NavigationDrawerModal } from "@material/web/labs/navigationdrawer/internal/navigation-drawer-modal.js";
 import { styles } from "@material/web/labs/navigationdrawer/internal/navigation-drawer-modal-styles.js";
 import { styles as sharedStyles } from "@material/web/labs/navigationdrawer/internal/shared-styles.js";
-
-declare global {
-  interface HTMLElementTagNameMap {
-    "oscd-navigation-drawer": OscdNavigationDrawer;
-  }
-}
 
 const overrideStyles = css`
   :host {
@@ -38,7 +30,7 @@ const overrideStyles = css`
   }
 `;
 
-@customElement("oscd-navigation-drawer")
+
 export class OscdNavigationDrawer extends NavigationDrawerModal {
   static override readonly styles: CSSResultOrNative[] = [
     sharedStyles as unknown as CSSResult,

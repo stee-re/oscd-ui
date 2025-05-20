@@ -10,15 +10,13 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 import { CSSResultOrNative } from "lit";
-import { customElement } from "lit/decorators.js";
-
-import { SecondaryTab } from "@material/web/tabs/internal/secondary-tab.js";
-import { styles as secondaryStyles } from "@material/web/tabs/internal/secondary-tab-styles.js";
+import { PrimaryTab } from "@material/web/tabs/internal/primary-tab.js";
+import { styles as primaryStyles } from "@material/web/tabs/internal/primary-tab-styles.js";
 import { styles as sharedStyles } from "@material/web/tabs/internal/tab-styles.js";
 
 declare global {
   interface HTMLElementTagNameMap {
-    "oscd-secondary-tab": OscdSecondaryTab;
+    "oscd-primary-tab": OscdPrimaryTab;
   }
 }
 
@@ -28,7 +26,6 @@ declare global {
  * @final
  * @suppress {visibility}
  */
-@customElement("oscd-secondary-tab")
-export class OscdSecondaryTab extends SecondaryTab {
-  static override styles: CSSResultOrNative[] = [sharedStyles, secondaryStyles];
+export class OscdPrimaryTab extends PrimaryTab {
+  static override styles: CSSResultOrNative[] = [sharedStyles, primaryStyles];
 }

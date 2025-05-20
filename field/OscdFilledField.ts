@@ -10,8 +10,6 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 import { CSSResultOrNative } from "lit";
-import { customElement } from "lit/decorators.js";
-
 import { FilledField } from "@material/web/field/internal/filled-field.js";
 import { styles as filledStyles } from "@material/web/field/internal/filled-styles.js";
 import { styles as sharedStyles } from "@material/web/field/internal/shared-styles.js";
@@ -23,11 +21,9 @@ declare global {
 }
 
 /**
- * TODO(b/228525797): add docs
  * @final
  * @suppress {visibility}
  */
-@customElement("oscd-filled-field")
 export class OscdFilledField extends FilledField {
   static override styles: CSSResultOrNative[] = [sharedStyles, filledStyles];
 }

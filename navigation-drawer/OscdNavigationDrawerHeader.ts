@@ -4,8 +4,6 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 import { css, CSSResultOrNative } from "lit";
-import { customElement } from "lit/decorators.js";
-
 import { ListItemEl as ListItem } from "@material/web/list/internal/listitem/list-item.js";
 import { styles } from "@material/web/list/internal/listitem/list-item-styles.js";
 
@@ -62,7 +60,6 @@ const overrideStyles = css`
   }
 `;
 
-@customElement("oscd-navigation-drawer-header")
 export class OscdNavigationDrawerHeader extends ListItem {
   static override readonly styles: CSSResultOrNative[] = [
     styles,

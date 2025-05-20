@@ -1,21 +1,33 @@
-import "./oscd-app-bar.js";
-import "@material/web/divider/divider.js";
-import "@material/web/icon/icon.js";
-import "@material/web/list/list.js";
-import "@material/web/list/list-item.js";
-import "@material/web/iconbutton/icon-button.js";
-import "@material/web/icon/icon.js";
-import "@material/web/tabs/tabs.js";
-import "@material/web/tabs/primary-tab.js";
 import { html } from "lit";
 import type { Meta, StoryObj } from "@storybook/web-components";
+
+import { OscdList } from "list/OscdList";
+import { OscdListItem } from "list/OscdListItem";
+import { OscdIconButton } from "iconbutton/OscdIconButton";
+import { OscdIcon } from "icon/OscdIcon";
+import { OscdTabs } from "tabs/OscdTabs";
+import { OscdSecondaryTab } from "tabs/OscdSecondaryTab";
+import { OscdAppBar } from "./OscdAppBar.js";
+import { OscdDivider } from "../divider/OscdDivider.js";
+import { scopedWcDecorator } from "utils/storybook/scoped-wc-decorator.js";
 
 const meta: Meta = {
   title: "Open SCD/App Bar",
   component: "oscd-app-bar",
   tags: ["autodocs"],
+  decorators: [scopedWcDecorator],
   parameters: {
     layout: "fullscreen",
+    scopedElements: {
+      "oscd-app-bar": OscdAppBar,
+      "oscd-divider": OscdDivider,
+      "oscd-icon-button": OscdIconButton,
+      "oscd-icon": OscdIcon,
+      "oscd-list": OscdList,
+      "oscd-list-item": OscdListItem,
+      "oscd-tabs": OscdTabs,
+      "oscd-secondary-tab": OscdSecondaryTab,
+    },
   },
   render: ({
     title,
@@ -43,20 +55,20 @@ const meta: Meta = {
         }
       </style>
       <oscd-app-bar>
-        <md-icon-button
+        <oscd-icon-button
           slot="actionStart"
           aria-label="Menu"
           @click=${() => console.log("actionStart clicked")}
         >
-          <md-icon>menu</md-icon></md-icon-button
+          <oscd-icon>menu</oscd-icon></oscd-icon-button
         >
         <div slot="title">${title}</div>
-        <md-icon-button
+        <oscd-icon-button
           slot="actionEnd"
           aria-label="Menu"
           @click=${() => console.log("actionStart clicked")}
         >
-          <md-icon>more_vert</md-icon></md-icon-button
+          <oscd-icon>more_vert</oscd-icon></oscd-icon-button
         >
         ${subHeader && subHeader()}
       </oscd-app-bar>
@@ -147,11 +159,11 @@ const meta: Meta = {
 export default meta;
 type Story = StoryObj;
 
-const defaultArgs = Object.entries(meta.argTypes).reduce(
+const defaultArgs = Object.entries(meta.argTypes ?? {}).reduce(
   (acc, [key, value]) => {
     return {
       ...acc,
-      [key]: value.table.defaultValue.summary,
+      [key]: value?.table?.defaultValue?.summary,
     };
   },
   {}
@@ -169,11 +181,11 @@ export const WithSubHeader: Story = {
     ...defaultArgs,
     title: "My App Bar (with subheader)",
     subHeader: () => html`
-      <md-tabs>
-        <md-primary-tab>Video</md-primary-tab>
-        <md-primary-tab>Photos</md-primary-tab>
-        <md-primary-tab>Audio</md-primary-tab>
-      </md-tabs>
+      <oscd-tabs>
+        <oscd-secondary-tab>Video</oscd-secondary-tab>
+        <oscd-secondary-tab>Photos</oscd-secondary-tab>
+        <oscd-secondary-tab>Audio</oscd-secondary-tab>
+      </oscd-tabs>
     `,
   },
 };

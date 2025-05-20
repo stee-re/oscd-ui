@@ -10,8 +10,6 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 import { css, CSSResultOrNative } from "lit";
-import { customElement } from "lit/decorators.js";
-
 import { ListItemEl as ListItem } from "@material/web/list/internal/listitem/list-item.js";
 import { styles } from "@material/web/list/internal/listitem/list-item-styles.js";
 
@@ -87,7 +85,6 @@ const styleOverrides = css`
  * @final
  * @suppress {visibility}
  */
-@customElement("oscd-list-item")
 export class OscdListItem extends ListItem {
   static override styles: CSSResultOrNative[] = [styles, styleOverrides];
 }

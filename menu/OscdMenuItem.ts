@@ -10,8 +10,6 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 import { CSSResultOrNative } from "lit";
-import { customElement } from "lit/decorators.js";
-
 import { MenuItemEl } from "@material/web/menu/internal/menuitem/menu-item.js";
 import { styles } from "@material/web/menu/internal/menuitem/menu-item-styles.js";
 
@@ -39,7 +37,6 @@ declare global {
  * @final
  * @suppress {visibility}
  */
-@customElement("oscd-menu-item")
 export class OscdMenuItem extends MenuItemEl {
   static override styles: CSSResultOrNative[] = [styles];
 }
