@@ -10,14 +10,37 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 import { LitElement, html, css } from "lit";
-// import "@material/web/elevation/elevation.js";
 
 declare global {
   interface HTMLElementTagNameMap {
     "oscd-app-bar": OscdAppBar;
   }
 }
-
+/**
+ * @tag oscd-app-bar
+ * @class OscdAppBar
+ * @extends LitElement
+ * @summary A component that represents an app bar.
+ * @description
+ * The app bar is a top-level navigation component that displays information and actions relating to the current screen.
+ * It can contain a title, navigation icons, and action icons.
+ * The app bar is typically used in conjunction with a navigation drawer or bottom navigation.
+ * @slot actionStart - Slot for action icons at the start of the app bar.
+ * @slot title - Slot for the title of the app bar.
+ * @slot actionEnd - Slot for action icons at the end of the app bar.
+ * @slot Default - Slot for additional content in the app bar.
+ *
+ * @cssprop --oscd-app-bar-elevation - The elevation level of the app bar.
+ * @cssprop --oscd-app-bar-shadow-color - The shadow color of the app bar.
+ * @cssprop --oscd-app-bar-color - The color of the app bar.
+ * @cssprop --oscd-app-bar-background-color - The background color of the app bar.
+ * @cssprop --oscd-app-bar-title-font-family - The font family of the app bar title.
+ * @cssprop --oscd-app-bar-title-font-size - The font size of the app bar title.
+ * @cssprop --oscd-app-bar-title-line-height - The line height of the app bar title.
+ * @cssprop --oscd-app-bar-title-font-weight - The font weight of the app bar title.
+ * @cssprop --md-icon-button-icon-color - The color of the icon button in the app bar.
+ *
+ */
 export class OscdAppBar extends LitElement {
   static override styles = css`
     :host {
@@ -56,6 +79,7 @@ export class OscdAppBar extends LitElement {
           var(--md-ref-typeface-weight-regular, 500)
         )
       );
+      --md-icon-button-icon-color: var(--app-bar-color);
     }
 
     header {

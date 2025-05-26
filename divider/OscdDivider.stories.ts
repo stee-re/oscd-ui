@@ -1,0 +1,33 @@
+import { html } from "lit";
+import type { Meta, StoryObj } from "@storybook/web-components";
+
+import { OscdDivider } from "divider/OscdDivider";
+import { scopedWcDecorator } from "utils/storybook/scopedWcDecorator.js";
+
+const meta: Meta = {
+  title: "Open SCD/Divider",
+  component: "oscd-divider",
+  tags: ["autodocs"],
+  decorators: [scopedWcDecorator],
+  parameters: {
+    layout: "centered",
+    scopedElements: {
+      "oscd-divider": OscdDivider,
+    },
+  },
+  render: () => html`
+    <div>
+      <p>Above the divider</p>
+      <oscd-divider></oscd-divider>
+      <p>Below the divider</p>
+    </div>
+  `,
+  argTypes: {},
+};
+
+export default meta;
+type Story = StoryObj;
+
+export const Default: Story = {
+  args: {},
+};

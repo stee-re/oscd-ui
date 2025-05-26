@@ -8,3 +8,84 @@
   href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
   rel="stylesheet"
 />
+<style>
+  :root {
+    /* Solarized base colors */
+    --oscd-base03: #002b36;
+    --oscd-base02: #073642;
+    --oscd-base01: #586e75;
+    --oscd-base00: #657b83;
+    --oscd-base0: #839496;
+    --oscd-base1: #93a1a1;
+    --oscd-base2: #eee8d5;
+    --oscd-base3: #fdf6e3;
+
+    /* Solarized accent colors */
+    --oscd-yellow: #b58900;
+    --oscd-orange: #cb4b16;
+    --oscd-red: #dc322f;
+    --oscd-magenta: #d33682;
+    --oscd-violet: #6c71c4;
+    --oscd-blue: #268bd2;
+    --oscd-cyan: #2aa198;
+    --oscd-green: #859900;
+  }
+
+  /* Light Mode */
+  :root[data-theme="light"] {
+    --md-sys-color-primary: var(--oscd-cyan);
+    --md-sys-color-on-primary: var(--oscd-base3);
+    --md-sys-color-secondary: var(--oscd-violet);
+    --md-sys-color-on-secondary: var(--oscd-base3);
+
+    --md-sys-color-background: var(--oscd-base3);
+    --md-sys-color-on-background: var(--oscd-base00);
+
+    --md-sys-color-surface: var(--oscd-base2);
+    --md-sys-color-surface-container-highest: var(--oscd-base2);
+    --md-sys-color-surface-container-high: var(--oscd-base2);
+    --md-sys-color-surface-container: var(--oscd-base2);
+    --md-sys-color-surface-variant: var(--oscd-base2);
+    --md-sys-color-on-surface: var(--oscd-base00);
+    --md-sys-color-on-surface-variant: var(--oscd-base00);
+
+    --md-sys-color-error: var(--oscd-red);
+    --md-sys-color-on-error: var(--oscd-base3);
+    --md-sys-color-outline: var(--oscd-base1);
+  }
+
+  /* Dark Mode */
+  :root[data-theme="dark"] {
+    --md-sys-color-primary: var(--oscd-violet);
+    --md-sys-color-on-primary: var(--oscd-base03);
+    --md-sys-color-secondary: var(--oscd-cyan);
+    --md-sys-color-on-secondary: var(--oscd-base03);
+
+    --md-sys-color-background: var(--oscd-base03);
+    --md-sys-color-on-background: var(--oscd-base0);
+
+    --md-sys-color-surface: var(--oscd-base02);
+    --md-sys-color-surface-container-highest: var(--oscd-base02);
+    --md-sys-color-surface-container-high: var(--oscd-base02);
+    --md-sys-color-surface-container: var(--oscd-base02);
+    --md-sys-color-surface-variant: var(--oscd-base02);
+    --md-sys-color-on-surface: var(--oscd-base0);
+    --md-sys-color-on-surface-variant: var(--oscd-base0);
+
+    --md-sys-color-error: var(--oscd-red);
+    --md-sys-color-on-error: var(--oscd-base03);
+    --md-sys-color-outline: var(--oscd-base01);
+  }
+
+  * {
+    --oscd-text-font: var(--oscd-theme-text-font, "Roboto");
+    --oscd-icon-font: var(--oscd-theme-icon-font, "Material Icons");
+    --oscd-text-font-mono: var(--oscd-theme-text-font-mono, "Roboto Mono");
+  }
+
+  body {
+    font-family: var(--oscd-text-font);
+    color: var(--md-sys-color-on-background);
+    background-color: var(--md-sys-color-background);
+  }
+</style>

@@ -12,5 +12,4 @@
 import { OscdAppBar } from "./OscdAppBar.js";
 
 window.customElements.define("oscd-app-bar", OscdAppBar);
-
 export { OscdAppBar };

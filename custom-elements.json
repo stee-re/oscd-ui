@@ -1,0 +1,1631 @@
+{
+  "schemaVersion": "1.0.0",
+  "readme": "",
+  "modules": [
+    {
+      "kind": "javascript-module",
+      "path": "app-bar/oscd-app-bar.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "oscd-app-bar",
+          "declaration": {
+            "name": "OscdAppBar",
+            "module": "/app-bar/OscdAppBar.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "OscdAppBar",
+          "declaration": {
+            "name": "OscdAppBar",
+            "module": "app-bar/oscd-app-bar.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "button/oscd-filled-button.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "oscd-filled-button",
+          "declaration": {
+            "name": "OscdFilledButton",
+            "module": "/button/OscdFilledButton"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "OscdFilledButton",
+          "declaration": {
+            "name": "OscdFilledButton",
+            "module": "button/oscd-filled-button.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "button/oscd-outlined-button.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "oscd-outlined-button",
+          "declaration": {
+            "name": "OscdOutlinedButton",
+            "module": "/button/OscdOutlinedButton"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "OscdOutlinedButton",
+          "declaration": {
+            "name": "OscdOutlinedButton",
+            "module": "button/oscd-outlined-button.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "button/oscd-text-button.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "oscd-text-button",
+          "declaration": {
+            "name": "OscdTextButton",
+            "module": "/button/OscdTextButton"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "OscdTextButton",
+          "declaration": {
+            "name": "OscdTextButton",
+            "module": "button/oscd-text-button.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "elevation/oscd-elevation.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "oscd-elevation",
+          "declaration": {
+            "name": "OscdElevation",
+            "module": "/elevation/OscdElevation"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "OscdElevation",
+          "declaration": {
+            "name": "OscdElevation",
+            "module": "elevation/oscd-elevation.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "dialog/oscd-dialog.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "oscd-dialog",
+          "declaration": {
+            "name": "OscdDialog",
+            "module": "/dialog/OscdDialog"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "OscdDialog",
+          "declaration": {
+            "name": "OscdDialog",
+            "module": "dialog/oscd-dialog.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "field/oscd-filled-field.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "oscd-filled-field",
+          "declaration": {
+            "name": "OscdFilledField",
+            "module": "/field/OscdFilledField"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "OscdFilledField",
+          "declaration": {
+            "name": "OscdFilledField",
+            "module": "field/oscd-filled-field.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "field/oscd-outlined-field.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "oscd-outlined-field",
+          "declaration": {
+            "name": "OscdOutlinedField",
+            "module": "/field/OscdOutlinedField"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "OscdOutlinedField",
+          "declaration": {
+            "name": "OscdOutlinedField",
+            "module": "field/oscd-outlined-field.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "divider/oscd-divider.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "oscd-divider",
+          "declaration": {
+            "name": "OscdDivider",
+            "module": "/divider/OscdDivider.js"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "OscdDivider",
+          "declaration": {
+            "name": "OscdDivider",
+            "module": "divider/oscd-divider.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "icon/oscd-icon.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "oscd-icon",
+          "declaration": {
+            "name": "OscdIcon",
+            "module": "/icon/OscdIcon"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "OscdIcon",
+          "declaration": {
+            "name": "OscdIcon",
+            "module": "icon/oscd-icon.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "list/oscd-list-item.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "oscd-list-item",
+          "declaration": {
+            "name": "OscdListItem",
+            "module": "/list/OscdListItem"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "OscdListItem",
+          "declaration": {
+            "name": "OscdListItem",
+            "module": "list/oscd-list-item.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "list/oscd-list.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "oscd-list",
+          "declaration": {
+            "name": "OscdList",
+            "module": "/list/OscdList"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "OscdList",
+          "declaration": {
+            "name": "OscdList",
+            "module": "list/oscd-list.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "navigation-drawer/oscd-navigation-drawer-header.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "oscd-navigation-drawer-header",
+          "declaration": {
+            "name": "OscdNavigationDrawerHeader",
+            "module": "/navigation-drawer/OscdNavigationDrawerHeader"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "OscdNavigationDrawerHeader",
+          "declaration": {
+            "name": "OscdNavigationDrawerHeader",
+            "module": "navigation-drawer/oscd-navigation-drawer-header.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "navigation-drawer/oscd-navigation-drawer.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "oscd-navigation-drawer",
+          "declaration": {
+            "name": "OscdNavigationDrawer",
+            "module": "/navigation-drawer/OscdNavigationDrawer"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "OscdNavigationDrawer",
+          "declaration": {
+            "name": "OscdNavigationDrawer",
+            "module": "navigation-drawer/oscd-navigation-drawer.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "menu/oscd-menu-item.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "oscd-menu-item",
+          "declaration": {
+            "name": "OscdMenuItem",
+            "module": "/menu/OscdMenuItem"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "OscdMenuItem",
+          "declaration": {
+            "name": "OscdMenuItem",
+            "module": "menu/oscd-menu-item.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "menu/oscd-menu.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "oscd-menu",
+          "declaration": {
+            "name": "OscdMenu",
+            "module": "/menu/OscdMenu"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "*",
+          "declaration": {
+            "name": "*",
+            "package": "\"./OscdMenu\""
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "select/oscd-filled-select.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "oscd-filled-select",
+          "declaration": {
+            "name": "OscdFilledSelect",
+            "module": "/select/OscdFilledSelect"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "OscdFilledSelect",
+          "declaration": {
+            "name": "OscdFilledSelect",
+            "module": "select/oscd-filled-select.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "select/oscd-outlined-select.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "oscd-outlined-select",
+          "declaration": {
+            "name": "OscdOutlinedSelect",
+            "module": "/select/OscdOutlinedSelect"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "OscdOutlinedSelect",
+          "declaration": {
+            "name": "OscdOutlinedSelect",
+            "module": "select/oscd-outlined-select.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "select/oscd-select-option.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "oscd-select-option",
+          "declaration": {
+            "name": "OscdSelectOption",
+            "module": "/select/OscdSelectOption"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "OscdSelectOption",
+          "declaration": {
+            "name": "OscdSelectOption",
+            "module": "select/oscd-select-option.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "iconbutton/oscd-filled-icon-button.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "oscd-filled-icon-button",
+          "declaration": {
+            "name": "OscdFilledIconButton",
+            "module": "/iconbutton/OscdFilledIconButton"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "OscdFilledIconButton",
+          "declaration": {
+            "name": "OscdFilledIconButton",
+            "module": "iconbutton/oscd-filled-icon-button.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "iconbutton/oscd-filled-tonal-icon-button.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "oscd-filled-tonal-icon-button",
+          "declaration": {
+            "name": "OscdFilledTonalIconButton",
+            "module": "/iconbutton/OscdFilledTonalIconButton"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "OscdFilledTonalIconButton",
+          "declaration": {
+            "name": "OscdFilledTonalIconButton",
+            "module": "iconbutton/oscd-filled-tonal-icon-button.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "iconbutton/oscd-icon-button.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "oscd-icon-button",
+          "declaration": {
+            "name": "OscdIconButton",
+            "module": "/iconbutton/OscdIconButton"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "OscdIconButton",
+          "declaration": {
+            "name": "OscdIconButton",
+            "module": "iconbutton/oscd-icon-button.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "iconbutton/oscd-outlined-icon-button.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "oscd-outlined-icon-button",
+          "declaration": {
+            "name": "OscdOutlinedIconButton",
+            "module": "/iconbutton/OutlinedIconButton"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "OscdOutlinedIconButton",
+          "declaration": {
+            "name": "OscdOutlinedIconButton",
+            "module": "iconbutton/oscd-outlined-icon-button.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "textfield/oscd-filled-text-field.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "oscd-filled-text-field",
+          "declaration": {
+            "name": "OscdFilledTextField",
+            "module": "/textfield/OscdFilledTextField"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "OscdFilledTextField",
+          "declaration": {
+            "name": "OscdFilledTextField",
+            "module": "textfield/oscd-filled-text-field.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "textfield/oscd-outlined-text-field.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "oscd-outlined-text-field",
+          "declaration": {
+            "name": "OscdOutlinedTextField",
+            "module": "/textfield/OscdOutlinedTextField"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "OscdOutlinedTextField",
+          "declaration": {
+            "name": "OscdOutlinedTextField",
+            "module": "textfield/oscd-outlined-text-field.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "tabs/oscd-primary-tab.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "oscd-primary-tab",
+          "declaration": {
+            "name": "OscdPrimaryTab",
+            "module": "/tabs/OscdPrimaryTab"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "OscdPrimaryTab",
+          "declaration": {
+            "name": "OscdPrimaryTab",
+            "module": "tabs/oscd-primary-tab.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "tabs/oscd-secondary-tab.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "oscd-secondary-tab",
+          "declaration": {
+            "name": "OscdSecondaryTab",
+            "module": "/tabs/OscdSecondaryTab"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "OscdSecondaryTab",
+          "declaration": {
+            "name": "OscdSecondaryTab",
+            "module": "tabs/oscd-secondary-tab.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "tabs/oscd-tabs.ts",
+      "declarations": [],
+      "exports": [
+        {
+          "kind": "custom-element-definition",
+          "name": "oscd-tabs",
+          "declaration": {
+            "name": "OscdTabs",
+            "module": "/tabs/OscdTabs"
+          }
+        },
+        {
+          "kind": "js",
+          "name": "OscdTabs",
+          "declaration": {
+            "name": "OscdTabs",
+            "module": "tabs/oscd-tabs.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "app-bar/OscdAppBar.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "OscdAppBar",
+          "cssStates": [
+            {
+              "description": "The elevation level of the app bar.",
+              "name": "--oscd-app-bar-elevation"
+            },
+            {
+              "description": "The shadow color of the app bar.",
+              "name": "--oscd-app-bar-shadow-color"
+            },
+            {
+              "description": "The color of the app bar.",
+              "name": "--oscd-app-bar-color"
+            },
+            {
+              "description": "The background color of the app bar.",
+              "name": "--oscd-app-bar-background-color"
+            },
+            {
+              "description": "The font family of the app bar title.",
+              "name": "--oscd-app-bar-title-font-family"
+            },
+            {
+              "description": "The font size of the app bar title.",
+              "name": "--oscd-app-bar-title-font-size"
+            },
+            {
+              "description": "The line height of the app bar title.",
+              "name": "--oscd-app-bar-title-line-height"
+            },
+            {
+              "description": "The font weight of the app bar title.",
+              "name": "--oscd-app-bar-title-font-weight"
+            },
+            {
+              "description": "The color of the icon button in the app bar.",
+              "name": "--md-icon-button-icon-color"
+            }
+          ],
+          "slots": [
+            {
+              "description": "Slot for action icons at the start of the app bar.",
+              "name": "actionStart"
+            },
+            {
+              "description": "Slot for the title of the app bar.",
+              "name": "title"
+            },
+            {
+              "description": "Slot for action icons at the end of the app bar.",
+              "name": "actionEnd"
+            },
+            {
+              "description": "Slot for additional content in the app bar.",
+              "name": "Default"
+            }
+          ],
+          "members": [],
+          "superclass": {
+            "name": "LitElement",
+            "package": "lit"
+          },
+          "tagName": "oscd-app-bar",
+          "customElement": true,
+          "summary": "A component that represents an app bar."
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "OscdAppBar",
+          "declaration": {
+            "name": "OscdAppBar",
+            "module": "app-bar/OscdAppBar.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "dialog/OscdDialog.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "OscdDialog",
+          "members": [],
+          "superclass": {
+            "name": "Dialog",
+            "package": "@material/web/dialog/internal/dialog.js"
+          },
+          "summary": "Dialogs can require an action, communicate information, or help\nusers accomplish a task. There are two types of dialogs: basic and\nfull-screen.",
+          "tagName": "oscd-dialog",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "OscdDialog",
+          "declaration": {
+            "name": "OscdDialog",
+            "module": "dialog/OscdDialog.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "divider/OscdDivider.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "OscdDivider",
+          "members": [],
+          "superclass": {
+            "name": "Divider",
+            "package": "@material/web/divider/internal/divider.js"
+          },
+          "summary": "A divider is a thin line that groups content in lists and\ncontainers.",
+          "tagName": "oscd-divider",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "OscdDivider",
+          "declaration": {
+            "name": "OscdDivider",
+            "module": "divider/OscdDivider.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "field/OscdFilledField.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "OscdFilledField",
+          "members": [],
+          "superclass": {
+            "name": "FilledField",
+            "package": "@material/web/field/internal/filled-field.js"
+          },
+          "tagName": "oscd-filled-field",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "OscdFilledField",
+          "declaration": {
+            "name": "OscdFilledField",
+            "module": "field/OscdFilledField.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "field/OscdOutlinedField.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "OscdOutlinedField",
+          "members": [],
+          "superclass": {
+            "name": "OutlinedField",
+            "package": "@material/web/field/internal/outlined-field.js"
+          },
+          "tagName": "oscd-outlined-field",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "OscdOutlinedField",
+          "declaration": {
+            "name": "OscdOutlinedField",
+            "module": "field/OscdOutlinedField.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "button/OscdFilledButton.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "OscdFilledButton",
+          "members": [],
+          "superclass": {
+            "name": "FilledButton",
+            "package": "@material/web/button/internal/filled-button.js"
+          },
+          "summary": "Buttons help people take action, such as sending an email, sharing a\ndocument, or liking a comment.",
+          "tagName": "oscd-filled-button",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "OscdFilledButton",
+          "declaration": {
+            "name": "OscdFilledButton",
+            "module": "button/OscdFilledButton.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "button/OscdOutlinedButton.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "OscdOutlinedButton",
+          "members": [],
+          "superclass": {
+            "name": "OutlinedButton",
+            "package": "@material/web/button/internal/outlined-button.js"
+          },
+          "summary": "Buttons help people take action, such as sending an email, sharing a\ndocument, or liking a comment.",
+          "tagName": "oscd-outlined-button",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "OscdOutlinedButton",
+          "declaration": {
+            "name": "OscdOutlinedButton",
+            "module": "button/OscdOutlinedButton.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "button/OscdTextButton.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "OscdTextButton",
+          "members": [],
+          "superclass": {
+            "name": "TextButton",
+            "package": "@material/web/button/internal/text-button.js"
+          },
+          "summary": "Buttons help people take action, such as sending an email, sharing a\ndocument, or liking a comment.",
+          "tagName": "oscd-text-button",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "OscdTextButton",
+          "declaration": {
+            "name": "OscdTextButton",
+            "module": "button/OscdTextButton.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "elevation/OscdElevation.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "The `<md-elevation>` custom element with default styles.\n\nElevation is the relative distance between two surfaces along the z-axis.",
+          "name": "OscdElevation",
+          "members": [],
+          "superclass": {
+            "name": "Elevation",
+            "package": "@material/web/elevation/internal/elevation.js"
+          },
+          "tagName": "oscd-elevation",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "OscdElevation",
+          "declaration": {
+            "name": "OscdElevation",
+            "module": "elevation/OscdElevation.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "icon/OscdIcon.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "OscdIcon",
+          "members": [],
+          "superclass": {
+            "name": "Icon",
+            "package": "@material/web/icon/internal/icon.js"
+          },
+          "tagName": "oscd-icon",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "OscdIcon",
+          "declaration": {
+            "name": "OscdIcon",
+            "module": "icon/OscdIcon.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "iconbutton/OscdFilledIconButton.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "OscdFilledIconButton",
+          "members": [
+            {
+              "kind": "method",
+              "name": "getRenderClasses",
+              "privacy": "protected"
+            }
+          ],
+          "superclass": {
+            "name": "IconButton",
+            "package": "@material/web/iconbutton/internal/icon-button.js"
+          },
+          "summary": "Icon buttons help people take supplementary actions with a single\ntap.",
+          "tagName": "oscd-filled-icon-button",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "OscdFilledIconButton",
+          "declaration": {
+            "name": "OscdFilledIconButton",
+            "module": "iconbutton/OscdFilledIconButton.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "iconbutton/OscdFilledTonalIconButton.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "OscdFilledTonalIconButton",
+          "members": [
+            {
+              "kind": "method",
+              "name": "getRenderClasses",
+              "privacy": "protected"
+            }
+          ],
+          "superclass": {
+            "name": "IconButton",
+            "package": "@material/web/iconbutton/internal/icon-button.js"
+          },
+          "summary": "Icon buttons help people take supplementary actions with a single\ntap.",
+          "tagName": "oscd-filled-tonal-icon-button",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "OscdFilledTonalIconButton",
+          "declaration": {
+            "name": "OscdFilledTonalIconButton",
+            "module": "iconbutton/OscdFilledTonalIconButton.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "iconbutton/OscdIconButton.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "OscdIconButton",
+          "members": [
+            {
+              "kind": "method",
+              "name": "getRenderClasses",
+              "privacy": "protected"
+            }
+          ],
+          "superclass": {
+            "name": "IconButton",
+            "package": "@material/web/iconbutton/internal/icon-button.js"
+          },
+          "summary": "Icon buttons help people take supplementary actions with a single\ntap.",
+          "tagName": "oscd-icon-button",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "OscdIconButton",
+          "declaration": {
+            "name": "OscdIconButton",
+            "module": "iconbutton/OscdIconButton.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "list/OscdList.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "OscdList",
+          "members": [],
+          "superclass": {
+            "name": "List",
+            "package": "@material/web/list/internal/list.js"
+          },
+          "summary": "Lists are continuous, vertical indexes of text or images.",
+          "tagName": "oscd-list",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "OscdList",
+          "declaration": {
+            "name": "OscdList",
+            "module": "list/OscdList.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "list/OscdListItem.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "OscdListItem",
+          "members": [],
+          "superclass": {
+            "name": "ListItem",
+            "package": "@material/web/list/internal/listitem/list-item.js"
+          },
+          "summary": "Lists are continuous, vertical indexes of text or images. Items are placed\ninside the list.",
+          "tagName": "oscd-list-item",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ListItemType",
+          "declaration": {
+            "name": "ListItemType",
+            "module": "\"@material/web/list/internal/listitem/list-item.js\""
+          }
+        },
+        {
+          "kind": "js",
+          "name": "OscdListItem",
+          "declaration": {
+            "name": "OscdListItem",
+            "module": "list/OscdListItem.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "menu/OscdMenu.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "OscdMenu",
+          "members": [],
+          "superclass": {
+            "name": "Menu",
+            "package": "@material/web/menu/internal/menu.js"
+          },
+          "summary": "Menus display a list of choices on a temporary surface.",
+          "tagName": "oscd-menu",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "ListItem",
+          "declaration": {
+            "name": "ListItem",
+            "module": "\"@material/web/list/internal/list-navigation-helpers.js\""
+          }
+        },
+        {
+          "kind": "js",
+          "name": "MenuItem",
+          "declaration": {
+            "name": "MenuItem",
+            "module": "\"@material/web/menu/internal/controllers/menuItemController.js\""
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CloseReason",
+          "declaration": {
+            "name": "CloseReason",
+            "module": "\"@material/web/menu/internal/controllers/shared.js\""
+          }
+        },
+        {
+          "kind": "js",
+          "name": "FocusState",
+          "declaration": {
+            "name": "FocusState",
+            "module": "\"@material/web/menu/internal/controllers/shared.js\""
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CloseMenuEvent",
+          "declaration": {
+            "name": "CloseMenuEvent",
+            "module": "\"@material/web/menu/internal/controllers/shared.js\""
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Menu",
+          "declaration": {
+            "name": "Menu",
+            "module": "\"@material/web/menu/internal/controllers/shared.js\""
+          }
+        },
+        {
+          "kind": "js",
+          "name": "Corner",
+          "declaration": {
+            "name": "Corner",
+            "module": "\"@material/web/menu/internal/menu.js\""
+          }
+        },
+        {
+          "kind": "js",
+          "name": "OscdMenu",
+          "declaration": {
+            "name": "OscdMenu",
+            "module": "menu/OscdMenu.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "menu/OscdMenuItem.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "OscdMenuItem",
+          "members": [],
+          "superclass": {
+            "name": "MenuItemEl",
+            "package": "@material/web/menu/internal/menuitem/menu-item.js"
+          },
+          "summary": "Menus display a list of choices on a temporary surface.",
+          "tagName": "oscd-menu-item",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "MenuItem",
+          "declaration": {
+            "name": "MenuItem",
+            "module": "\"@material/web/menu/internal/controllers/menuItemController.js\""
+          }
+        },
+        {
+          "kind": "js",
+          "name": "CloseMenuEvent",
+          "declaration": {
+            "name": "CloseMenuEvent",
+            "module": "\"@material/web/menu/internal/controllers/shared.js\""
+          }
+        },
+        {
+          "kind": "js",
+          "name": "OscdMenuItem",
+          "declaration": {
+            "name": "OscdMenuItem",
+            "module": "menu/OscdMenuItem.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "navigation-drawer/OscdNavigationDrawer.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "OscdNavigationDrawer",
+          "members": [],
+          "superclass": {
+            "name": "NavigationDrawerModal",
+            "package": "@material/web/labs/navigationdrawer/internal/navigation-drawer-modal.js"
+          },
+          "tagName": "oscd-navigation-drawer",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "OscdNavigationDrawer",
+          "declaration": {
+            "name": "OscdNavigationDrawer",
+            "module": "navigation-drawer/OscdNavigationDrawer.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "navigation-drawer/OscdNavigationDrawerHeader.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "OscdNavigationDrawerHeader",
+          "members": [],
+          "superclass": {
+            "name": "ListItem",
+            "package": "@material/web/list/internal/listitem/list-item.js"
+          },
+          "tagName": "oscd-navigation-drawer-header",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "OscdNavigationDrawerHeader",
+          "declaration": {
+            "name": "OscdNavigationDrawerHeader",
+            "module": "navigation-drawer/OscdNavigationDrawerHeader.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "select/OscdFilledSelect.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "OscdFilledSelect",
+          "members": [],
+          "superclass": {
+            "name": "FilledSelect",
+            "package": "@material/web/select/internal/filled-select.js"
+          },
+          "summary": "Select menus display a list of choices on temporary surfaces and display the\ncurrently selected menu item above the menu.",
+          "tagName": "oscd-filled-select",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "OscdFilledSelect",
+          "declaration": {
+            "name": "OscdFilledSelect",
+            "module": "select/OscdFilledSelect.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "select/OscdOutlinedSelect.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "OscdOutlinedSelect",
+          "members": [],
+          "superclass": {
+            "name": "OutlinedSelect",
+            "package": "@material/web/select/internal/outlined-select.js"
+          },
+          "summary": "Select menus display a list of choices on temporary surfaces and display the\ncurrently selected menu item above the menu.",
+          "tagName": "oscd-outlined-select",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "OscdOutlinedSelect",
+          "declaration": {
+            "name": "OscdOutlinedSelect",
+            "module": "select/OscdOutlinedSelect.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "select/OscdSelectOption.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "OscdSelectOption",
+          "members": [],
+          "superclass": {
+            "name": "SelectOptionEl",
+            "package": "@material/web/select/internal/selectoption/select-option.js"
+          },
+          "summary": "Select menus display a list of choices on temporary surfaces and display the\ncurrently selected menu item above the menu.",
+          "tagName": "oscd-select-option",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "SelectOption",
+          "declaration": {
+            "name": "SelectOption",
+            "module": "\"@material/web/select/internal/selectoption/select-option.js\""
+          }
+        },
+        {
+          "kind": "js",
+          "name": "OscdSelectOption",
+          "declaration": {
+            "name": "OscdSelectOption",
+            "module": "select/OscdSelectOption.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "textfield/OscdFilledTextField.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "OscdFilledTextField",
+          "members": [
+            {
+              "kind": "field",
+              "name": "scopedElements",
+              "static": true,
+              "readonly": true
+            },
+            {
+              "kind": "field",
+              "name": "fieldTag",
+              "privacy": "protected",
+              "readonly": true,
+              "default": "literal`oscd-filled-field`"
+            }
+          ],
+          "mixins": [
+            {
+              "name": "ScopedElementsMixin",
+              "package": "@open-wc/scoped-elements/lit-element.js"
+            }
+          ],
+          "superclass": {
+            "name": "FilledTextField",
+            "package": "@material/web/textfield/internal/filled-text-field.js"
+          },
+          "tagName": "oscd-filled-text-field",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "OscdTextFieldType",
+          "declaration": {
+            "name": "TextFieldType",
+            "module": "\"@material/web/textfield/internal/text-field.js\""
+          }
+        },
+        {
+          "kind": "js",
+          "name": "OscdFilledTextField",
+          "declaration": {
+            "name": "OscdFilledTextField",
+            "module": "textfield/OscdFilledTextField.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "textfield/OscdOutlinedTextField.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "OscdOutlinedTextField",
+          "members": [
+            {
+              "kind": "field",
+              "name": "fieldTag",
+              "privacy": "protected",
+              "readonly": true,
+              "default": "literal`oscd-outlined-field`"
+            }
+          ],
+          "superclass": {
+            "name": "OutlinedTextField",
+            "package": "@material/web/textfield/internal/outlined-text-field.js"
+          },
+          "tagName": "oscd-outlined-text-field",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "TextFieldType",
+          "declaration": {
+            "name": "TextFieldType",
+            "module": "\"@material/web/textfield/internal/text-field.js\""
+          }
+        },
+        {
+          "kind": "js",
+          "name": "OscdOutlinedTextField",
+          "declaration": {
+            "name": "OscdOutlinedTextField",
+            "module": "textfield/OscdOutlinedTextField.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "tabs/OscdPrimaryTab.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "OscdPrimaryTab",
+          "members": [],
+          "superclass": {
+            "name": "PrimaryTab",
+            "package": "@material/web/tabs/internal/primary-tab.js"
+          },
+          "summary": "Tab allow users to display a tab within a Tabs.",
+          "tagName": "oscd-primary-tab",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "OscdPrimaryTab",
+          "declaration": {
+            "name": "OscdPrimaryTab",
+            "module": "tabs/OscdPrimaryTab.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "tabs/OscdSecondaryTab.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "OscdSecondaryTab",
+          "members": [],
+          "superclass": {
+            "name": "SecondaryTab",
+            "package": "@material/web/tabs/internal/secondary-tab.js"
+          },
+          "summary": "Tab allow users to display a tab within a Tabs.",
+          "tagName": "oscd-secondary-tab",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "OscdSecondaryTab",
+          "declaration": {
+            "name": "OscdSecondaryTab",
+            "module": "tabs/OscdSecondaryTab.ts"
+          }
+        }
+      ]
+    },
+    {
+      "kind": "javascript-module",
+      "path": "tabs/OscdTabs.ts",
+      "declarations": [
+        {
+          "kind": "class",
+          "description": "",
+          "name": "OscdTabs",
+          "members": [],
+          "superclass": {
+            "name": "Tabs",
+            "package": "@material/web/tabs/internal/tabs.js"
+          },
+          "summary": "Tabs displays a list of selectable tabs.",
+          "tagName": "oscd-tabs",
+          "customElement": true
+        }
+      ],
+      "exports": [
+        {
+          "kind": "js",
+          "name": "OscdTabs",
+          "declaration": {
+            "name": "OscdTabs",
+            "module": "tabs/OscdTabs.ts"
+          }
+        }
+      ]
+    }
+  ]
+}
