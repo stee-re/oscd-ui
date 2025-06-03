@@ -12,7 +12,7 @@ import { OscdAppBar } from "app-bar/OscdAppBar";
 import { OscdFilledIconButton } from "iconbutton/OscdFilledIconButton";
 
 const meta: Meta = {
-  title: "Open SCD/Navigation Drawer/Navigation Drawer",
+  title: "Library/Navigation Drawer/Navigation Drawer",
   component: "oscd-navigation-drawer",
   tags: ["autodocs"],
   decorators: [scopedWcDecorator],

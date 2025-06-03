@@ -138,7 +138,7 @@ const meta: Meta = {
             .fill(null)
             .map(
               (_, index) =>
-                html`<oscd-secondary-tab>Tab ${index}</oscd-secondary-tab>`,
+                html`<oscd-secondary-tab>Tab ${index}</oscd-secondary-tab>`
             )}
         </oscd-tabs>
       </oscd-app-bar>
@@ -263,40 +263,29 @@ const meta: Meta = {
           <div>
             <oscd-filled-button
               @click=${(event: Event) => {
-                const dialog = (
-                  event.target as Element
-                )?.parentElement?.querySelector("#dialog") as OscdDialog;
-                if (dialog) {
-                  dialog.open = true;
-                }
+                updateArgs({ dialogOpen: true });
               }}
               >Open Dialog</oscd-filled-button
             >
-            <oscd-dialog id="dialog">
-              <div slot="headline">Dialog Title</div>
-              <div slot="content">This is a dialog preview.</div>
+            <oscd-dialog
+              ?open=${args["dialogOpen"]}
+              @closed=${(event: CustomEvent) => {
+                updateArgs({ dialogOpen: false });
+              }}
+            >
+              <div slot="headline">Confirm Action</div>
+              <div slot="content">
+                Are you sure you want to proceed with this operation? This
+                action cannot be undone.
+              </div>
               <div slot="actions">
                 <oscd-filled-button
-                  @click=${(event: Event) => {
-                    const dialog = (event.target as Element).closest(
-                      "oscd-dialog",
-                    ) as OscdDialog;
-                    if (dialog) {
-                      dialog.open = false;
-                    }
-                  }}
+                  @click=${() => updateArgs({ dialogOpen: false })}
                   >Cancel</oscd-filled-button
                 >
                 <oscd-filled-button
-                  @click=${(event: Event) => {
-                    const dialog = (event.target as Element).closest(
-                      "oscd-dialog",
-                    ) as OscdDialog;
-                    if (dialog) {
-                      dialog.open = false;
-                    }
-                  }}
-                  >OK</oscd-filled-button
+                  @click=${() => updateArgs({ dialogOpen: false })}
+                  >Confirm</oscd-filled-button
                 >
               </div>
             </oscd-dialog>
@@ -316,7 +305,7 @@ const meta: Meta = {
 export default meta;
 type Story = StoryObj;
 
-export const Default: Story = {
+export const AllComponents: Story = {
   args: {
     navOpened: false,
     menuOpened: false,

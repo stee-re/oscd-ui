@@ -6,7 +6,7 @@ import { OscdSelectOption } from "select/OscdSelectOption";
 import { scopedWcDecorator } from "utils/storybook/scopedWcDecorator.js";
 
 const meta: Meta = {
-  title: "Open SCD/Selects/Filled Select",
+  title: "Library/Selects/Filled Select",
   component: "oscd-filled-select",
   tags: ["autodocs"],
   decorators: [scopedWcDecorator],

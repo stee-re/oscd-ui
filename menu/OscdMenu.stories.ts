@@ -14,7 +14,7 @@ import {
 const { args, argTypes } = getStorybookHelpers("oscd-menu");
 
 const meta: Meta<OscdMenu> = {
-  title: "Open SCD/Menus/Menu",
+  title: "Library/Menus/Menu",
   component: "oscd-menu",
   tags: ["autodocs"],
   decorators: [scopedWcDecorator, storybookHelperDecorator],
