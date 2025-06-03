@@ -5,7 +5,7 @@ import { OscdIcon } from "icon/OscdIcon";
 import { scopedWcDecorator } from "utils/storybook/scopedWcDecorator.js";
 
 const meta: Meta = {
-  title: "Open SCD/Icon",
+  title: "Library/Icon",
   component: "oscd-icon",
   tags: ["autodocs"],
   decorators: [scopedWcDecorator],

@@ -8,7 +8,7 @@ import { OscdFilledIconButton } from "./OscdFilledIconButton";
 import { OscdOutlinedIconButton } from "./OutlinedIconButton";
 
 const meta: Meta = {
-  title: "Open SCD/Icon Buttons",
+  title: "Library/Icon Buttons",
   component: "oscd-icon-button",
   tags: ["autodocs"],
   decorators: [scopedWcDecorator],

@@ -6,7 +6,7 @@ import { OscdListItem } from "list/OscdListItem";
 import { scopedWcDecorator } from "utils/storybook/scopedWcDecorator.js";
 
 const meta: Meta = {
-  title: "Open SCD/Lists",
+  title: "Library/Lists",
   component: "oscd-list",
   // tags: ["autodocs"],
   decorators: [scopedWcDecorator],

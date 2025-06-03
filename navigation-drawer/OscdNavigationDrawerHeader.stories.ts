@@ -5,7 +5,7 @@ import { OscdNavigationDrawerHeader } from "navigation-drawer/OscdNavigationDraw
 import { scopedWcDecorator } from "utils/storybook/scopedWcDecorator.js";
 
 const meta: Meta = {
-  title: "Open SCD/Navigation Drawer/Navigation Drawer Header",
+  title: "Library/Navigation Drawer/Navigation Drawer Header",
   component: "oscd-navigation-drawer-header",
   tags: ["autodocs"],
   decorators: [scopedWcDecorator],

@@ -5,7 +5,7 @@ import { OscdDivider } from "divider/OscdDivider";
 import { scopedWcDecorator } from "utils/storybook/scopedWcDecorator.js";
 
 const meta: Meta = {
-  title: "Open SCD/Divider",
+  title: "Library/Divider",
   component: "oscd-divider",
   tags: ["autodocs"],
   decorators: [scopedWcDecorator],

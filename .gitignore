@@ -9,7 +9,17 @@ node_modules
 !types/*.d.ts
 .wireit/
 *.tsbuildinfo
+!.storybook/*.js
+!custom-elements-manifest.config.js
+!test-runner.config.js
 
 ## editors
 /.idea
 /.vscode
+
+## build artifacts
+dist
+build
+coverage
+storybook-static
+

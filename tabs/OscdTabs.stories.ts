@@ -6,7 +6,7 @@ import { OscdPrimaryTab } from "tabs/OscdPrimaryTab";
 import { scopedWcDecorator } from "utils/storybook/scopedWcDecorator.js";
 
 const meta: Meta = {
-  title: "Open SCD/Tabs/Tabs",
+  title: "Library/Tabs/Tabs",
   component: "oscd-tabs",
   tags: ["autodocs"],
   decorators: [scopedWcDecorator],

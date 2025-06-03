@@ -6,7 +6,7 @@ import { scopedWcDecorator } from "utils/storybook/scopedWcDecorator.js";
 import { OscdElevation } from "elevation/OscdElevation";
 
 const meta: Meta = {
-  title: "Open SCD/Menus/Menu Item",
+  title: "Library/Menus/Menu Item",
   component: "oscd-menu-item",
   tags: ["autodocs"],
   decorators: [scopedWcDecorator],

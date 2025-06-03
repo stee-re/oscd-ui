@@ -4,9 +4,10 @@ import type { Meta, StoryObj } from "@storybook/web-components";
 import { OscdDialog } from "dialog/OscdDialog";
 import { OscdFilledButton } from "button/OscdFilledButton";
 import { scopedWcDecorator } from "utils/storybook/scopedWcDecorator.js";
+import { useArgs } from "@storybook/preview-api";
 
 const meta: Meta = {
-  title: "Open SCD/Dialog",
+  title: "Library/Dialog",
   component: "oscd-dialog",
   tags: ["autodocs"],
   decorators: [scopedWcDecorator],
@@ -17,23 +18,37 @@ const meta: Meta = {
       "oscd-filled-button": OscdFilledButton,
     },
   },
-  render: ({ open }) => html`
-    <oscd-dialog ?open=${open}>
-      <div slot="headline">Confirm Action</div>
-      <div slot="content">
-        Are you sure you want to proceed with this operation? This action cannot
-        be undone.
-      </div>
-      <div slot="actions">
-        <oscd-filled-button @click=${() => console.log("Cancelled")}
-          >Cancel</oscd-filled-button
-        >
-        <oscd-filled-button @click=${() => console.log("Confirmed")}
-          >Confirm</oscd-filled-button
-        >
-      </div>
-    </oscd-dialog>
-  `,
+  render: (args) => {
+    const [_, updateArgs] = useArgs();
+    return html`
+      <oscd-filled-button
+        @click=${(event: Event) => {
+          updateArgs({ open: true });
+        }}
+        >Open Dialog</oscd-filled-button
+      >
+      <oscd-dialog
+        ?open=${args["open"]}
+        @closed=${(event: CustomEvent) => {
+          updateArgs({ open: false });
+        }}
+      >
+        <div slot="headline">Confirm Action</div>
+        <div slot="content">
+          Are you sure you want to proceed with this operation? This action
+          cannot be undone.
+        </div>
+        <div slot="actions">
+          <oscd-filled-button @click=${() => updateArgs({ open: false })}
+            >Cancel</oscd-filled-button
+          >
+          <oscd-filled-button @click=${() => updateArgs({ open: false })}
+            >Confirm</oscd-filled-button
+          >
+        </div>
+      </oscd-dialog>
+    `;
+  },
   argTypes: {
     open: {
       control: { type: "boolean" },
@@ -50,6 +65,6 @@ type Story = StoryObj;
 
 export const Default: Story = {
   args: {
-    open: true,
+    open: false,
   },
 };

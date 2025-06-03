@@ -7,7 +7,7 @@ import { OscdFilledButton } from "./OscdFilledButton";
 import { OscdOutlinedButton } from "./OscdOutlinedButton";
 
 const meta: Meta = {
-  title: "Open SCD/Buttons",
+  title: "Library/Buttons",
   tags: ["autodocs"],
   decorators: [scopedWcDecorator],
   parameters: {
