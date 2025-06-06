@@ -1,5 +1,19 @@
 # Changelog
 
+## [0.0.5](https://github.com/stee-re/oscd-ui/compare/oscd-ui-v0.0.4...oscd-ui-v0.0.5) (2025-06-06)
+
+
+### Features
+
+* enable custom-elements.json creation and enable storybook to consume it ([4a1e0b3](https://github.com/stee-re/oscd-ui/commit/4a1e0b3d708ccc87ddf1b7a5221be4e9f48622bb))
+* make all web components scoped ([eb2aae9](https://github.com/stee-re/oscd-ui/commit/eb2aae95162482a1103501c2e692fd039e70a4fc))
+
+
+### Bug Fixes
+
+* dialog scrim should be above navigation drawer ([b1015f9](https://github.com/stee-re/oscd-ui/commit/b1015f9e2cd0f8182a239abfd9baab5719d6e6a9))
+* menu story to display menu correctly ([78eb327](https://github.com/stee-re/oscd-ui/commit/78eb327b096af6a402bb86b8162d3f74ca11a6a6))
+
 ## [0.0.4](https://github.com/OMICRONEnergyOSS/oscd-ui/compare/oscd-ui-v0.0.3...oscd-ui-v0.0.4) (2025-06-02)
 
 
