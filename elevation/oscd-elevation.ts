@@ -5,5 +5,11 @@
  */
 import { OscdElevation } from "./OscdElevation";
 
+declare global {
+  interface HTMLElementTagNameMap {
+    "oscd-elevation": OscdElevation;
+  }
+}
+
 customElements.define("oscd-elevation", OscdElevation);
 export { OscdElevation };

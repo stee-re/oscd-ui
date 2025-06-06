@@ -5,5 +5,11 @@
  */
 import { OscdOutlinedButton } from "./OscdOutlinedButton";
 
+declare global {
+  interface HTMLElementTagNameMap {
+    "md-outlined-button": OscdOutlinedButton;
+  }
+}
+
 customElements.define("oscd-outlined-button", OscdOutlinedButton);
 export { OscdOutlinedButton };

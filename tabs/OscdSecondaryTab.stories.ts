@@ -1,31 +1,37 @@
 import { html } from "lit";
 import type { Meta, StoryObj } from "@storybook/web-components";
-
+import { withActions } from "@storybook/addon-actions/decorator";
 import { OscdSecondaryTab } from "tabs/OscdSecondaryTab";
 import { scopedWcDecorator } from "utils/storybook/scopedWcDecorator.js";
+import {
+  getStorybookHelpers,
+  storybookHelperDecorator,
+} from "utils/storybook/getStorybookHelpers.js";
 
-const meta: Meta = {
+const { args, argTypes, template, events } =
+  getStorybookHelpers("oscd-secondary-tab");
+
+const meta: Meta<OscdSecondaryTab & { textContent: string }> = {
   title: "Library/Tabs/Secondary Tab",
   component: "oscd-secondary-tab",
   tags: ["autodocs"],
-  decorators: [scopedWcDecorator],
+  decorators: [withActions, scopedWcDecorator, storybookHelperDecorator],
   parameters: {
     layout: "centered",
     scopedElements: {
       "oscd-secondary-tab": OscdSecondaryTab,
     },
+    actions: {
+      handles: ["click", ...events],
+    },
   },
-  render: ({ label }) =>
-    html`<oscd-secondary-tab>${label}</oscd-secondary-tab>`,
+  render: ({ textContent, ...argz }) => template(argz, html`${textContent}`),
   argTypes: {
-    label: {
+    textContent: {
       control: { type: "text" },
       description: "Tab label",
-      table: {
-        category: "Web Component Properties",
-        defaultValue: { summary: "Tab" },
-      },
     },
+    ...argTypes,
   },
 };
 
@@ -34,6 +40,7 @@ type Story = StoryObj;
 
 export const Default: Story = {
   args: {
-    label: "Tab",
+    textContent: "Secondary Tab",
+    ...args,
   },
 };

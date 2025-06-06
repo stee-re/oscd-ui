@@ -1,34 +1,44 @@
 import { html } from "lit";
 import type { Meta, StoryObj } from "@storybook/web-components";
-
+import { withActions } from "@storybook/addon-actions/decorator";
 import { OscdMenuItem } from "menu/OscdMenuItem";
 import { scopedWcDecorator } from "utils/storybook/scopedWcDecorator.js";
 import { OscdElevation } from "elevation/OscdElevation";
+import {
+  getStorybookHelpers,
+  storybookHelperDecorator,
+} from "utils/storybook/getStorybookHelpers.js";
 
-const meta: Meta = {
+const { args, argTypes, template, events } =
+  getStorybookHelpers("oscd-menu-item");
+
+const meta: Meta<OscdMenuItem & { textContent: string }> = {
   title: "Library/Menus/Menu Item",
   component: "oscd-menu-item",
   tags: ["autodocs"],
-  decorators: [scopedWcDecorator],
+  decorators: [withActions, scopedWcDecorator, storybookHelperDecorator],
   parameters: {
     layout: "centered",
     scopedElements: {
       "oscd-menu-item": OscdMenuItem,
       "oscd-elevation": OscdElevation,
     },
+    actions: {
+      handles: ["click", ...events],
+    },
   },
-  render: ({ label }) =>
-    html`<div style="--md-elevation-level: 5; position: relative;">
-      <oscd-menu-item>${label}</oscd-menu-item><oscd-elevation></oscd-elevation>
-    </div>`,
+  render: ({ textContent, ...argz }) => html`
+    <div style="position: relative;--md-elevation-level: 2;">
+      ${template(argz, html`${textContent}`)}
+      <oscd-elevation></oscd-elevation>
+    </div>
+  `,
   argTypes: {
-    label: {
+    ...argTypes,
+    textContent: {
+      name: "Text Content",
       control: { type: "text" },
       description: "Menu item label",
-      table: {
-        category: "Web Component Properties",
-        defaultValue: { summary: "Option" },
-      },
     },
   },
 };
@@ -38,6 +48,7 @@ type Story = StoryObj;
 
 export const Default: Story = {
   args: {
-    label: "Option",
+    textContent: "Menu Item",
+    ...args,
   },
 };

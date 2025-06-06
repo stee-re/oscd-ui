@@ -2,30 +2,42 @@ import { html } from "lit";
 import type { Meta, StoryObj } from "@storybook/web-components";
 
 import { OscdNavigationDrawerHeader } from "navigation-drawer/OscdNavigationDrawerHeader";
+import { OscdElevation } from "elevation/OscdElevation";
 import { scopedWcDecorator } from "utils/storybook/scopedWcDecorator.js";
+import {
+  getStorybookHelpers,
+  storybookHelperDecorator,
+} from "utils/storybook/getStorybookHelpers.js";
 
-const meta: Meta = {
+const { args, argTypes, template } = getStorybookHelpers(
+  "oscd-navigation-drawer-header"
+);
+
+const meta: Meta<OscdNavigationDrawerHeader & { textContent: string }> = {
   title: "Library/Navigation Drawer/Navigation Drawer Header",
   component: "oscd-navigation-drawer-header",
   tags: ["autodocs"],
-  decorators: [scopedWcDecorator],
+  decorators: [scopedWcDecorator, storybookHelperDecorator],
   parameters: {
     layout: "centered",
     scopedElements: {
       "oscd-navigation-drawer-header": OscdNavigationDrawerHeader,
+      "oscd-elevation": OscdElevation,
     },
   },
-  render: ({ label }) => html`
-    <oscd-navigation-drawer-header>${label}</oscd-navigation-drawer-header>
+
+  render: ({ textContent, ...argz }) => html`
+    <div style="position: relative;--md-elevation-level: 2;">
+      ${template(args, html`${textContent}`)}
+      <oscd-elevation></oscd-elevation>
+    </div>
   `,
   argTypes: {
-    label: {
+    ...argTypes,
+    textContent: {
       control: { type: "text" },
+      name: "Text Content",
       description: "Header label",
-      table: {
-        category: "Web Component Properties",
-        defaultValue: { summary: "Navigation" },
-      },
     },
   },
 };
@@ -35,6 +47,7 @@ type Story = StoryObj;
 
 export const Default: Story = {
   args: {
-    label: "Navigation",
+    ...args,
+    textContent: "Navigation Header",
   },
 };

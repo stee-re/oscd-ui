@@ -7,12 +7,6 @@ import { css, CSSResultOrNative } from "lit";
 import { ListItemEl as ListItem } from "@material/web/list/internal/listitem/list-item.js";
 import { styles } from "@material/web/list/internal/listitem/list-item-styles.js";
 
-declare global {
-  interface HTMLElementTagNameMap {
-    "oscd-navigation-drawer-header": OscdNavigationDrawerHeader;
-  }
-}
-
 const overrideStyles = css`
   :host {
     --navigation-drawer-header-color: var(
@@ -60,6 +54,11 @@ const overrideStyles = css`
   }
 `;
 
+/**
+ * @tag oscd-navigation-drawer-header
+ * @summary A header for the navigation drawer.
+ *
+ */
 export class OscdNavigationDrawerHeader extends ListItem {
   static override readonly styles: CSSResultOrNative[] = [
     styles,

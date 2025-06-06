@@ -14,17 +14,11 @@ import { styles as sharedStyles } from "@material/web/button/internal/shared-sty
 import { TextButton } from "@material/web/button/internal/text-button.js";
 import { styles as textStyles } from "@material/web/button/internal/text-styles.js";
 
-declare global {
-  interface HTMLElementTagNameMap {
-    "oscd-text-button": OscdTextButton;
-  }
-}
-
 /**
+ * @tag "oscd-text-button"
  * @summary Buttons help people take action, such as sending an email, sharing a
  * document, or liking a comment.
  *
- * @description
  * __Emphasis:__ Low emphasis – For optional or supplementary actions with the
  * least amount of prominence
  *
@@ -37,8 +31,11 @@ declare global {
  * - Change account
  * - Turn on
  *
+ * @event click Fired when the user clicks the button.
+ *
  * @final
  * @suppress {visibility}
+ *
  */
 export class OscdTextButton extends TextButton {
   static override styles: CSSResultOrNative[] = [sharedStyles, textStyles];

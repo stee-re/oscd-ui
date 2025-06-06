@@ -13,13 +13,8 @@ import { CSSResultOrNative } from "lit";
 import { Tabs } from "@material/web/tabs/internal/tabs.js";
 import { styles } from "@material/web/tabs/internal/tabs-styles.js";
 
-declare global {
-  interface HTMLElementTagNameMap {
-    "oscd-tabs": OscdTabs;
-  }
-}
-
 /**
+ * @tag oscd-tabs
  * @summary Tabs displays a list of selectable tabs.
  *
  * @final

@@ -4,7 +4,11 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-// import 'jasmine'; (google3-only)
+/* This is a PoC unit test.
+ * Purpose was to show how we can copy 1:1 the tests from Material Web Components
+ * and use them for our custom elements.
+ * This has been left in place as an example of how its done.
+ */
 
 import { html } from "lit";
 import { customElement } from "lit/decorators.js";

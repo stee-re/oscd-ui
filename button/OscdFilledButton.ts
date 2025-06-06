@@ -16,17 +16,11 @@ import { styles as sharedElevationStyles } from "@material/web/button/internal/s
 import { styles as sharedStyles } from "@material/web/button/internal/shared-styles.js";
 import { CSSResult } from "@lit/reactive-element";
 
-declare global {
-  interface HTMLElementTagNameMap {
-    "oscd-filled-button": OscdFilledButton;
-  }
-}
-
 /**
+ * @tag "oscd-filled-button"
  * @summary Buttons help people take action, such as sending an email, sharing a
  * document, or liking a comment.
  *
- * @description
  * __Emphasis:__ High emphasis – For the primary, most important, or most common
  * action on a screen
  *
@@ -39,8 +33,11 @@ declare global {
  * - Confirm
  * - Done
  *
+ * @event click Fired when the user clicks the button.
+ *
  * @final
  * @suppress {visibility}
+ *
  */
 export class OscdFilledButton extends FilledButton {
   static override styles: CSSResult[] = [

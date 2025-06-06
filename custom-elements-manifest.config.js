@@ -1,9 +1,7 @@
-import { jsDocTagsPlugin } from "@wc-toolkit/jsdoc-tags";
-
-import { dedupeAndFilterPlugin } from "./scripts/cem-plugin-dedupe.js";
+import { summaryToDescriptionPlugin } from "./scripts/cem-summary-to-description-plugin.js";
 
 export default {
-  globs: ["**/Oscd*.ts"], // Adjust to match your tag-defining files
+  globs: ["**/Oscd*.ts"],
   exclude: [
     "**/*.stories.ts",
     "**/*.d.ts",
@@ -15,8 +13,8 @@ export default {
     "theming",
   ],
   outdir: "./",
-  litelement: true, // Only if you're using Lit
-  analyzeDependencies: true,
+  litelement: true,
+  dependencies: true,
   dev: false,
-  plugins: [jsDocTagsPlugin({}), dedupeAndFilterPlugin()],
+  plugins: [summaryToDescriptionPlugin()],
 };

@@ -14,18 +14,12 @@ import { FilledSelect } from "@material/web/select/internal/filled-select.js";
 import { styles } from "@material/web/select/internal/filled-select-styles.js";
 import { styles as sharedStyles } from "@material/web/select/internal/shared-styles.js";
 
-declare global {
-  interface HTMLElementTagNameMap {
-    "oscd-filled-select": OscdFilledSelect;
-  }
-}
-
 /**
+ * @tag oscd-filled-select
  * @summary
  * Select menus display a list of choices on temporary surfaces and display the
  * currently selected menu item above the menu.
  *
- * @description
  * The select component allows users to choose a value from a fixed list of
  * available options. Composed of an interactive anchor button and a menu, it is
  * analogous to the native HTML `<select>` element. This is the "filled"

@@ -11,7 +11,7 @@ import { OscdNavigationDrawerHeader } from "./OscdNavigationDrawerHeader";
 import { OscdAppBar } from "app-bar/OscdAppBar";
 import { OscdFilledIconButton } from "iconbutton/OscdFilledIconButton";
 
-const meta: Meta = {
+const meta: Meta<OscdNavigationDrawer & { label: string }> = {
   title: "Library/Navigation Drawer/Navigation Drawer",
   component: "oscd-navigation-drawer",
   tags: ["autodocs"],

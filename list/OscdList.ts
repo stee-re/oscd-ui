@@ -13,12 +13,6 @@ import { css, CSSResultOrNative } from "lit";
 import { List } from "@material/web/list/internal/list.js";
 import { styles } from "@material/web/list/internal/list-styles.js";
 
-declare global {
-  interface HTMLElementTagNameMap {
-    "oscd-list": OscdList;
-  }
-}
-
 const overrideStyles = css`
   :host {
     --md-list-container-color: var(
@@ -29,9 +23,9 @@ const overrideStyles = css`
 `;
 
 /**
+ * @tag oscd-list
  * @summary Lists are continuous, vertical indexes of text or images.
  *
- * @description
  * Lists consist of one or more list items, and can contain actions represented
  * by icons and text. List items come in three sizes: one-line, two-line, and
  * three-line.

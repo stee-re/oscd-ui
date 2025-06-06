@@ -3,31 +3,37 @@ import type { Meta, StoryObj } from "@storybook/web-components";
 
 import { OscdDivider } from "divider/OscdDivider";
 import { scopedWcDecorator } from "utils/storybook/scopedWcDecorator.js";
+import {
+  getStorybookHelpers,
+  storybookHelperDecorator,
+} from "utils/storybook/getStorybookHelpers.js";
 
-const meta: Meta = {
+const { args, argTypes, template } = getStorybookHelpers("oscd-divider");
+
+const meta: Meta<OscdDivider> = {
   title: "Library/Divider",
   component: "oscd-divider",
   tags: ["autodocs"],
-  decorators: [scopedWcDecorator],
+  decorators: [scopedWcDecorator, storybookHelperDecorator],
   parameters: {
     layout: "centered",
     scopedElements: {
       "oscd-divider": OscdDivider,
     },
   },
-  render: () => html`
+  render: (argz) => html`
     <div>
       <p>Above the divider</p>
-      <oscd-divider></oscd-divider>
+      ${template(argz)}
       <p>Below the divider</p>
     </div>
   `,
-  argTypes: {},
+  argTypes,
 };
 
 export default meta;
 type Story = StoryObj;
 
 export const Default: Story = {
-  args: {},
+  args,
 };

@@ -30,9 +30,9 @@ declare global {
 }
 
 /**
+ * @tag oscd-menu
  * @summary Menus display a list of choices on a temporary surface.
  *
- * @description
  * Menus appear when users interact with a button, action, or other control.
  *
  * They can be opened from a variety of elements, most commonly icon buttons,

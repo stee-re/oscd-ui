@@ -16,18 +16,12 @@ import { SelectOptionEl } from "@material/web/select/internal/selectoption/selec
 
 export { type SelectOption } from "@material/web/select/internal/selectoption/select-option.js";
 
-declare global {
-  interface HTMLElementTagNameMap {
-    "oscd-select-option": OscdSelectOption;
-  }
-}
-
 /**
+ * @tag oscd-select-option
  * @summary
  * Select menus display a list of choices on temporary surfaces and display the
  * currently selected menu item above the menu.
  *
- * @description
  * The select component allows users to choose a value from a fixed list of
  * available options. Composed of an interactive anchor button and a menu, it is
  * analogous to the native HTML `<select>` element. This is the option that

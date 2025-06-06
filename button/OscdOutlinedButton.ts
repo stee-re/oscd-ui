@@ -9,23 +9,17 @@
  * Copyright 2025 OMICRON Electronics GmbH
  * SPDX-License-Identifier: Apache-2.0
  */
-import {CSSResultOrNative} from 'lit';
+import { CSSResultOrNative } from "lit";
 
-import {OutlinedButton} from '@material/web/button/internal/outlined-button.js';
-import {styles as outlinedStyles} from '@material/web/button/internal/outlined-styles.js';
-import {styles as sharedStyles} from '@material/web/button/internal/shared-styles.js';
-
-declare global {
-  interface HTMLElementTagNameMap {
-    'md-outlined-button': OscdOutlinedButton;
-  }
-}
+import { OutlinedButton } from "@material/web/button/internal/outlined-button.js";
+import { styles as outlinedStyles } from "@material/web/button/internal/outlined-styles.js";
+import { styles as sharedStyles } from "@material/web/button/internal/shared-styles.js";
 
 /**
+ * @tag "oscd-outlined-button"
  * @summary Buttons help people take action, such as sending an email, sharing a
  * document, or liking a comment.
  *
- * @description
  * __Emphasis:__ Medium emphasis – For important actions that don’t distract
  * from other onscreen elements.
  *
@@ -39,9 +33,12 @@ declare global {
  * - View all
  * - Add to cart
  * - Take out of trash
+ * 
+ * @event click Fired when the user clicks the button.
  *
  * @final
  * @suppress {visibility}
+ *
  */
 export class OscdOutlinedButton extends OutlinedButton {
   static override styles: CSSResultOrNative[] = [sharedStyles, outlinedStyles];
