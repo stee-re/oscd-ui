@@ -3,20 +3,25 @@ import type { Meta, StoryObj } from "@storybook/web-components";
 
 import { OscdIcon } from "icon/OscdIcon";
 import { scopedWcDecorator } from "utils/storybook/scopedWcDecorator.js";
+import {
+  getStorybookHelpers,
+  storybookHelperDecorator,
+} from "utils/storybook/getStorybookHelpers.js";
 
-const meta: Meta = {
+const { args, argTypes } = getStorybookHelpers("oscd-icon");
+
+const meta: Meta<OscdIcon & typeof args> = {
   title: "Library/Icon",
   component: "oscd-icon",
   tags: ["autodocs"],
-  decorators: [scopedWcDecorator],
+  decorators: [scopedWcDecorator, storybookHelperDecorator],
   parameters: {
     layout: "centered",
     scopedElements: {
       "oscd-icon": OscdIcon,
     },
   },
-  render: (args) => {
-    const { icon, iconSize, color } = args;
+  render: ({ icon, iconSize, color }) => {
     return html`
       <oscd-icon style="--md-icon-size:${iconSize ?? "40"}px; color:${color}">
         ${icon}</oscd-icon
@@ -24,26 +29,20 @@ const meta: Meta = {
     `;
   },
   argTypes: {
+    ...argTypes,
     icon: {
+      name: "Material icon name",
       control: { type: "text" },
       description: "Icon name",
-      table: {
-        defaultValue: { summary: "menu" },
-      },
     },
     iconSize: {
+      name: "Icon Size",
       control: { type: "number" },
       description: "Icon Size",
-      table: {
-        defaultValue: { summary: "40" },
-      },
     },
     color: {
       control: { type: "color" },
       description: "Icon Color",
-      table: {
-        defaultValue: { summary: "var(--md-sys-color-primary)" },
-      },
     },
   },
 };
@@ -53,7 +52,9 @@ type Story = StoryObj;
 
 export const Default: Story = {
   args: {
+    ...args,
     icon: "menu",
-    iconSize: "40",
+    iconSize: 40,
+    color: "var(--md-sys-primary)",
   },
 };

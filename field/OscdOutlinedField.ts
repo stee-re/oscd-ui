@@ -14,13 +14,11 @@ import { OutlinedField } from "@material/web/field/internal/outlined-field.js";
 import { styles as outlinedStyles } from "@material/web/field/internal/outlined-styles.js";
 import { styles as sharedStyles } from "@material/web/field/internal/shared-styles.js";
 
-declare global {
-  interface HTMLElementTagNameMap {
-    "oscd-outlined-field": OscdOutlinedField;
-  }
-}
-
 /**
+ * @tag oscd-outlined-field
+ * @summary A Material Design outlined field component.
+ * This component is a wrapper around the `OutlinedField` from Material Web Components,
+ * providing a scoped element that uses the `OscdOutlinedField` as its field.
  * @final
  * @suppress {visibility}
  */

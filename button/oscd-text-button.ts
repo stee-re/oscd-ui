@@ -5,5 +5,11 @@
  */
 import { OscdTextButton } from "./OscdTextButton";
 
+declare global {
+  interface HTMLElementTagNameMap {
+    "oscd-text-button": OscdTextButton;
+  }
+}
+
 customElements.define("oscd-text-button", OscdTextButton);
 export { OscdTextButton };

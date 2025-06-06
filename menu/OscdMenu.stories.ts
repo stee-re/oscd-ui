@@ -10,15 +10,15 @@ import {
   getStorybookHelpers,
   storybookHelperDecorator,
 } from "utils/storybook/getStorybookHelpers.js";
-
-const { args, argTypes } = getStorybookHelpers("oscd-menu");
+import { withActions } from "@storybook/addon-actions/decorator";
+// Import necessary components and utilities
+const { args, argTypes, template, events } = getStorybookHelpers("oscd-menu");
 
 const meta: Meta<OscdMenu> = {
   title: "Library/Menus/Menu",
   component: "oscd-menu",
   tags: ["autodocs"],
-  decorators: [scopedWcDecorator, storybookHelperDecorator],
-  args,
+  decorators: [scopedWcDecorator, storybookHelperDecorator, withActions],
   argTypes,
   parameters: {
     layout: "centered",
@@ -27,30 +27,27 @@ const meta: Meta<OscdMenu> = {
       "oscd-menu-item": OscdMenuItem,
       "oscd-outlined-button": OscdOutlinedButton,
     },
+    actions: {
+      handles: ["click", ...events],
+    },
   },
-  render: (args) => {
+  render: (argz) => {
     const [_, updateArgs] = useArgs();
     return html`
       <div style="position: relative;">
+        ${template(
+          argz,
+          html`<oscd-menu-item value="1">Option 1</oscd-menu-item>
+            <oscd-menu-item value="2">Option 2</oscd-menu-item>
+            <oscd-menu-item value="2">Option 3</oscd-menu-item>
+            <oscd-menu-item value="2">Option 4</oscd-menu-item>
+            <oscd-menu-item value="2">Option 5</oscd-menu-item>`
+        )}
         <oscd-outlined-button
           id="menu-button"
-          @click=${() => updateArgs({ open: !args["open"] })}
+          @click=${() => updateArgs({ open: !argz["open"] })}
           >Open Menu</oscd-outlined-button
         >
-        <oscd-menu
-          ?open=${args["open"]}
-          id="menu"
-          anchor="menu-button"
-          surfaceCorner="end-end"
-          anchorCorner="start-start"
-          @closed=${() => updateArgs({ open: false })}
-        >
-          <oscd-menu-item value="1">Option 1</oscd-menu-item>
-          <oscd-menu-item value="2">Option 2</oscd-menu-item>
-          <oscd-menu-item value="2">Option 3</oscd-menu-item>
-          <oscd-menu-item value="2">Option 4</oscd-menu-item>
-          <oscd-menu-item value="2">Option 5</oscd-menu-item>
-        </oscd-menu>
       </div>
     `;
   },
@@ -60,5 +57,10 @@ export default meta;
 type Story = StoryObj;
 
 export const Default: Story = {
-  args: {},
+  args: {
+    ...args,
+    anchor: "menu-button",
+    open: false, // Default state of the menu
+    "[@closed]": () => (args["open"] = false), // Close the menu when the closed event is triggered),
+  },
 };

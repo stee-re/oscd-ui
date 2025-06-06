@@ -11,7 +11,7 @@ setStorybookHelpersConfig({
   /** sets the custom type reference in the Custom Elements Manifest */
   typeRef: "expandedType",
   /** Adds a <script> tag where a `component` variable will reference the story's component */
-  setComponentVariable: false,
+  setComponentVariable: true,
   /** renders default values for attributes and CSS properties */
   renderDefaultValues: false,
 });
@@ -27,6 +27,12 @@ window.customElements.define = (name, cl, conf) => {
       console.warn(e);
     }
   }
+};
+
+export const parameters = {
+  controls: {
+    expanded: true,
+  },
 };
 
 export const globalTypes = {

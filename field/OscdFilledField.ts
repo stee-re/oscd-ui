@@ -14,13 +14,9 @@ import { FilledField } from "@material/web/field/internal/filled-field.js";
 import { styles as filledStyles } from "@material/web/field/internal/filled-styles.js";
 import { styles as sharedStyles } from "@material/web/field/internal/shared-styles.js";
 
-declare global {
-  interface HTMLElementTagNameMap {
-    "oscd-filled-field": OscdFilledField;
-  }
-}
-
 /**
+ * @tag oscd-filled-field
+ * @summary A Material Design filled field component.
  * @final
  * @suppress {visibility}
  */

@@ -14,17 +14,11 @@ import { IconButton } from "@material/web/iconbutton/internal/icon-button.js";
 import { styles as sharedStyles } from "@material/web/iconbutton/internal/shared-styles.js";
 import { styles } from "@material/web/iconbutton/internal/standard-styles.js";
 
-declare global {
-  interface HTMLElementTagNameMap {
-    "oscd-icon-button": OscdIconButton;
-  }
-}
-
 /**
+ * @tag oscd-icon-button
  * @summary Icon buttons help people take supplementary actions with a single
  * tap.
  *
- * @description
  * __Emphasis:__ Low emphasis – For optional or supplementary actions with the
  * least amount of prominence.
  *

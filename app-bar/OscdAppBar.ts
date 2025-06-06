@@ -10,25 +10,23 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 import { LitElement, html, css } from "lit";
+import { OscdElevation } from "../elevation/OscdElevation.js";
+import { ScopedElementsMixin } from "@open-wc/scoped-elements/lit-element.js";
 
-declare global {
-  interface HTMLElementTagNameMap {
-    "oscd-app-bar": OscdAppBar;
-  }
-}
 /**
  * @tag oscd-app-bar
  * @class OscdAppBar
- * @extends LitElement
- * @summary A component that represents an app bar.
- * @description
+ * @extends ScopedElementsMixin(LitElement)
+ * @summary A component that renders an app bar.
+ *
  * The app bar is a top-level navigation component that displays information and actions relating to the current screen.
  * It can contain a title, navigation icons, and action icons.
  * The app bar is typically used in conjunction with a navigation drawer or bottom navigation.
+ *
  * @slot actionStart - Slot for action icons at the start of the app bar.
  * @slot title - Slot for the title of the app bar.
  * @slot actionEnd - Slot for action icons at the end of the app bar.
- * @slot Default - Slot for additional content in the app bar.
+ * @slot Default - Slot for additional content which will appear immediately under the main app bar.
  *
  * @cssprop --oscd-app-bar-elevation - The elevation level of the app bar.
  * @cssprop --oscd-app-bar-shadow-color - The shadow color of the app bar.
@@ -41,7 +39,13 @@ declare global {
  * @cssprop --md-icon-button-icon-color - The color of the icon button in the app bar.
  *
  */
-export class OscdAppBar extends LitElement {
+export class OscdAppBar extends ScopedElementsMixin(LitElement) {
+  static get scopedElements() {
+    return {
+      "oscd-elevation": OscdElevation,
+    };
+  }
+
   static override styles = css`
     :host {
       --md-elevation-level: var(--oscd-app-bar-elevation, 3);
@@ -132,7 +136,6 @@ export class OscdAppBar extends LitElement {
     return html`
       <header>
         <div>
-          <!-- <md-elevation part="elevation"></md-elevation> -->
           <div class="main-header">
             <slot name="actionStart"></slot>
             <slot name="title"></slot>
@@ -143,6 +146,7 @@ export class OscdAppBar extends LitElement {
             <slot></slot>
           </div>
         </div>
+        <oscd-elevation part="elevation"></oscd-elevation>
       </header>
     `;
   }

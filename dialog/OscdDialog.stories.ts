@@ -1,21 +1,35 @@
 import { html } from "lit";
 import type { Meta, StoryObj } from "@storybook/web-components";
+import { withActions } from "@storybook/addon-actions/decorator";
 
 import { OscdDialog } from "dialog/OscdDialog";
 import { OscdFilledButton } from "button/OscdFilledButton";
 import { scopedWcDecorator } from "utils/storybook/scopedWcDecorator.js";
 import { useArgs } from "@storybook/preview-api";
+import {
+  getStorybookHelpers,
+  storybookHelperDecorator,
+} from "utils/storybook/getStorybookHelpers.js";
 
-const meta: Meta = {
+const { args, argTypes, events } = getStorybookHelpers("oscd-dialog");
+
+const { open: openArgType, otherArgTypes } = argTypes;
+
+// It isn't possible to use the storybookHelper template function,because
+// the open attribute is unfortunately not being typed correclty in the manifest.
+const meta: Meta<OscdDialog> = {
   title: "Library/Dialog",
   component: "oscd-dialog",
   tags: ["autodocs"],
-  decorators: [scopedWcDecorator],
+  decorators: [withActions, scopedWcDecorator, storybookHelperDecorator],
   parameters: {
     layout: "centered",
     scopedElements: {
       "oscd-dialog": OscdDialog,
       "oscd-filled-button": OscdFilledButton,
+    },
+    actions: {
+      handles: events,
     },
   },
   render: (args) => {
@@ -27,35 +41,37 @@ const meta: Meta = {
         }}
         >Open Dialog</oscd-filled-button
       >
-      <oscd-dialog
-        ?open=${args["open"]}
-        @closed=${(event: CustomEvent) => {
+      <script>
+        component.addEventListener("closed", (event) => {
+          console.log("Dialog closed", event);
           updateArgs({ open: false });
-        }}
-      >
-        <div slot="headline">Confirm Action</div>
-        <div slot="content">
-          Are you sure you want to proceed with this operation? This action
-          cannot be undone.
-        </div>
-        <div slot="actions">
-          <oscd-filled-button @click=${() => updateArgs({ open: false })}
-            >Cancel</oscd-filled-button
-          >
-          <oscd-filled-button @click=${() => updateArgs({ open: false })}
-            >Confirm</oscd-filled-button
-          >
-        </div>
-      </oscd-dialog>
+        });
+      </script>
+      
+        <oscd-dialog ?open=${args["open"]}>
+          <div slot="headline">Confirm Action</div>
+          <div slot="content">
+            Are you sure you want to proceed with this operation? This action
+            cannot be undone.
+          </div>
+          <div slot="actions">
+            <oscd-filled-button @click=${() => updateArgs({ open: false })}
+              >Cancel</oscd-filled-button
+            >
+            <oscd-filled-button @click=${() => updateArgs({ open: false })}
+              >Confirm</oscd-filled-button
+            >
+          </div>
+        </oscd-dialog>
+      </div>
     `;
   },
   argTypes: {
+    ...otherArgTypes,
     open: {
+      ...openArgType,
+      type: { name: "boolean", required: false },
       control: { type: "boolean" },
-      description: "Defines whether the dialog is open or closed.",
-      table: {
-        defaultValue: { summary: "true" },
-      },
     },
   },
 };
@@ -66,5 +82,6 @@ type Story = StoryObj;
 export const Default: Story = {
   args: {
     open: false,
+    ...args,
   },
 };

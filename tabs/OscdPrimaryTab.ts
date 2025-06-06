@@ -14,13 +14,8 @@ import { PrimaryTab } from "@material/web/tabs/internal/primary-tab.js";
 import { styles as primaryStyles } from "@material/web/tabs/internal/primary-tab-styles.js";
 import { styles as sharedStyles } from "@material/web/tabs/internal/tab-styles.js";
 
-declare global {
-  interface HTMLElementTagNameMap {
-    "oscd-primary-tab": OscdPrimaryTab;
-  }
-}
-
 /**
+ * @tag oscd-primary-tab
  * @summary Tab allow users to display a tab within a Tabs.
  *
  * @final

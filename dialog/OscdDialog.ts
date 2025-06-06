@@ -14,12 +14,6 @@ import { css, CSSResultOrNative } from "lit";
 import { Dialog } from "@material/web/dialog/internal/dialog.js";
 import { styles } from "@material/web/dialog/internal/dialog-styles.js";
 
-declare global {
-  interface HTMLElementTagNameMap {
-    "oscd-dialog": OscdDialog;
-  }
-}
-
 const styleOverrides = css`
   .scrim {
     z-index: 6;
@@ -27,11 +21,11 @@ const styleOverrides = css`
 `;
 
 /**
+ * @tag oscd-dialog
  * @summary Dialogs can require an action, communicate information, or help
  * users accomplish a task. There are two types of dialogs: basic and
  * full-screen.
  *
- * @description
  * A dialog is a modal window that appears in front of app content to provide
  * critical information or ask for a decision. Dialogs disable all app
  * functionality when they appear, and remain on screen until confirmed,

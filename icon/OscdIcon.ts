@@ -13,13 +13,11 @@ import { CSSResultOrNative } from "lit";
 import { Icon } from "@material/web/icon/internal/icon.js";
 import { styles } from "@material/web/icon/internal/icon-styles.js";
 
-declare global {
-  interface HTMLElementTagNameMap {
-    "oscd-icon": OscdIcon;
-  }
-}
-
 /**
+ * @tag oscd-icon
+ * @summary An icon is a graphical representation of an object, action, or concept.
+ * Icons can be used to represent actions, such as "add" or "delete", or to
+ * represent objects, such as "folder" or "file".
  * @final
  * @suppress {visibility}
  */

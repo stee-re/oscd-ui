@@ -14,13 +14,8 @@ import { SecondaryTab } from "@material/web/tabs/internal/secondary-tab.js";
 import { styles as secondaryStyles } from "@material/web/tabs/internal/secondary-tab-styles.js";
 import { styles as sharedStyles } from "@material/web/tabs/internal/tab-styles.js";
 
-declare global {
-  interface HTMLElementTagNameMap {
-    "oscd-secondary-tab": OscdSecondaryTab;
-  }
-}
-
 /**
+ * @tag oscd-secondary-tab
  * @summary Tab allow users to display a tab within a Tabs.
  *
  * @final

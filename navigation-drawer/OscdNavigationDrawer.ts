@@ -30,7 +30,12 @@ const overrideStyles = css`
   }
 `;
 
-
+/**
+ * @tag oscd-navigation-drawer
+ * @summary Navigation drawers are temporary surfaces that display a list of
+ * choices.
+ *
+ */
 export class OscdNavigationDrawer extends NavigationDrawerModal {
   static override readonly styles: CSSResultOrNative[] = [
     sharedStyles as unknown as CSSResult,
