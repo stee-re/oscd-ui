@@ -1,4 +1,4 @@
-import { OscdFilledSelect } from "./OscdFilledSelect";
+import { OscdFilledSelect } from "./OscdFilledSelect.js";
 
 declare global {
   interface HTMLElementTagNameMap {

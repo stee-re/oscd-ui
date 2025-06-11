@@ -9,7 +9,7 @@
  * Copyright 2025 OMICRON Electronics GmbH
  * SPDX-License-Identifier: Apache-2.0
  */
-import { OscdFilledField } from "../field/OscdFilledField";
+import { OscdFilledField } from "../field/OscdFilledField.js";
 import { CSSResultOrNative } from "lit";
 import { literal } from "lit/static-html.js";
 import { styles as filledStyles } from "@material/web/textfield/internal/filled-styles.js";

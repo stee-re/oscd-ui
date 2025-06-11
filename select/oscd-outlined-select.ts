@@ -1,4 +1,4 @@
-import { OscdOutlinedSelect } from "./OscdOutlinedSelect";
+import { OscdOutlinedSelect } from "./OscdOutlinedSelect.js";
 
 declare global {
   interface HTMLElementTagNameMap {

@@ -1,4 +1,4 @@
-import { OscdFilledTextField } from "./OscdFilledTextField";
+import { OscdFilledTextField } from "./OscdFilledTextField.js";
 
 declare global {
   interface HTMLElementTagNameMap {

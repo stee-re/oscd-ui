@@ -3,7 +3,7 @@
  * Copyright 2025 OMICRON Electronics GmbH
  * SPDX-License-Identifier: Apache-2.0
  */
-import { OscdElevation } from "./OscdElevation";
+import { OscdElevation } from "./OscdElevation.js";
 
 declare global {
   interface HTMLElementTagNameMap {

@@ -1,4 +1,4 @@
-import { OscdOutlinedTextField } from "./OscdOutlinedTextField";
+import { OscdOutlinedTextField } from "./OscdOutlinedTextField.js";
 
 declare global {
   interface HTMLElementTagNameMap {

@@ -1,4 +1,4 @@
-import { OscdIconButton } from "./OscdIconButton";
+import { OscdIconButton } from "./OscdIconButton.js";
 
 declare global {
   interface HTMLElementTagNameMap {

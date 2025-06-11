@@ -1,4 +1,4 @@
-import { OscdSelectOption } from "./OscdSelectOption";
+import { OscdSelectOption } from "./OscdSelectOption.js";
 
 declare global {
   interface HTMLElementTagNameMap {

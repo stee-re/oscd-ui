@@ -1,4 +1,4 @@
-import { OscdTabs } from "./OscdTabs";
+import { OscdTabs } from "./OscdTabs.js";
 
 declare global {
   interface HTMLElementTagNameMap {

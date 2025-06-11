@@ -1,4 +1,4 @@
-import { OscdMenuItem } from "./OscdMenuItem";
+import { OscdMenuItem } from "./OscdMenuItem.js";
 
 declare global {
   interface HTMLElementTagNameMap {

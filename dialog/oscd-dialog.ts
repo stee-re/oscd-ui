@@ -1,4 +1,4 @@
-import { OscdDialog } from "./OscdDialog";
+import { OscdDialog } from "./OscdDialog.js";
 
 declare global {
   interface HTMLElementTagNameMap {

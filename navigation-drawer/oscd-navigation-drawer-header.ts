@@ -1,4 +1,4 @@
-import { OscdNavigationDrawerHeader } from "./OscdNavigationDrawerHeader";
+import { OscdNavigationDrawerHeader } from "./OscdNavigationDrawerHeader.js";
 
 declare global {
   interface HTMLElementTagNameMap {

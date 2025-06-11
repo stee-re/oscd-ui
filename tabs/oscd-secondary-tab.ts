@@ -1,4 +1,4 @@
-import { OscdSecondaryTab } from "./OscdSecondaryTab";
+import { OscdSecondaryTab } from "./OscdSecondaryTab.js";
 
 declare global {
   interface HTMLElementTagNameMap {

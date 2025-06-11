@@ -1,4 +1,4 @@
-import { OscdFilledButton } from "./OscdFilledButton";
+import { OscdFilledButton } from "./OscdFilledButton.js";
 
 declare global {
   interface HTMLElementTagNameMap {
