@@ -10,6 +10,7 @@ import {
   getStorybookHelpers,
   storybookHelperDecorator,
 } from 'utils/storybook/getStorybookHelpers.js';
+import { action } from '@storybook/addon-actions';
 
 const { args, argTypes, events } = getStorybookHelpers('oscd-dialog');
 
@@ -41,14 +42,12 @@ const meta: Meta<OscdDialog> = {
         }}
         >Open Dialog</oscd-filled-button
       >
-      <script>
-        component.addEventListener("closed", (event) => {
-          console.log("Dialog closed", event);
-          updateArgs({ open: false });
-        });
-      </script>
       
-        <oscd-dialog ?open=${argz.open}>
+        <oscd-dialog ?open=${argz.open}
+            @closed=${(event: CustomEvent) => {
+              action('dialog closed')({ event });
+              updateArgs({ open: false });
+            }}>
           <div slot="headline">Confirm Action</div>
           <div slot="content">
             Are you sure you want to proceed with this operation? This action
