@@ -9,12 +9,12 @@
  * Copyright 2025 OMICRON Electronics GmbH
  * SPDX-License-Identifier: Apache-2.0
  */
-import { CSSResultOrNative } from "lit";
-import { styles } from "@material/web/menu/internal/menuitem/menu-item-styles.js";
+import { CSSResultOrNative } from 'lit';
+import { styles } from '@material/web/menu/internal/menuitem/menu-item-styles.js';
 
-import { SelectOptionEl } from "@material/web/select/internal/selectoption/select-option.js";
+import { SelectOptionEl } from '@material/web/select/internal/selectoption/select-option.js';
 
-export { type SelectOption } from "@material/web/select/internal/selectoption/select-option.js";
+export { type SelectOption } from '@material/web/select/internal/selectoption/select-option.js';
 
 /**
  * @tag oscd-select-option

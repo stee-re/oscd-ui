@@ -9,25 +9,19 @@
  * Copyright 2025 OMICRON Electronics GmbH
  * SPDX-License-Identifier: Apache-2.0
  */
-import { CSSResultOrNative } from "lit";
-import { Menu } from "@material/web/menu/internal/menu.js";
-import { styles } from "@material/web/menu/internal/menu-styles.js";
+import { CSSResultOrNative } from 'lit';
+import { Menu } from '@material/web/menu/internal/menu.js';
+import { styles } from '@material/web/menu/internal/menu-styles.js';
 
-export { type ListItem } from "@material/web/list/internal/list-navigation-helpers.js";
-export { type MenuItem } from "@material/web/menu/internal/controllers/menuItemController.js";
+export { type ListItem } from '@material/web/list/internal/list-navigation-helpers.js';
+export { type MenuItem } from '@material/web/menu/internal/controllers/menuItemController.js';
 export {
   CloseReason,
   FocusState,
   type CloseMenuEvent,
   type Menu,
-} from "@material/web/menu/internal/controllers/shared.js";
-export { Corner } from "@material/web/menu/internal/menu.js";
-
-declare global {
-  interface HTMLElementTagNameMap {
-    "oscd-menu": OscdMenu;
-  }
-}
+} from '@material/web/menu/internal/controllers/shared.js';
+export { Corner } from '@material/web/menu/internal/menu.js';
 
 /**
  * @tag oscd-menu

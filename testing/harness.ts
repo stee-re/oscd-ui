@@ -1,3 +1,4 @@
+/* eslint-disable */
 /**
  * @license
  * Copyright 2021 Google LLC
@@ -8,7 +9,7 @@ import {
   defaultTransformPseudoClasses,
   getTransformedPseudoClass,
   transformPseudoClasses,
-} from "./transform-pseudo-classes";
+} from './transform-pseudo-classes';
 
 /**
  * Retrieves the element type from a `Harness` type.
@@ -47,7 +48,7 @@ export type ElementWithHarness<
  * @return True if the element has a harness property.
  */
 export function isElementWithHarness(
-  element: Element
+  element: Element,
 ): element is ElementWithHarness {
   return (element as unknown as ElementWithHarness).harness instanceof Harness;
 }
@@ -92,7 +93,7 @@ export class Harness<E extends HTMLElement = HTMLElement> {
   async reset() {
     const element = await this.getInteractiveElement();
     for (const pseudoClass of this.transformPseudoClasses) {
-      this.forEachNodeFrom(element, (el) => {
+      this.forEachNodeFrom(element, el => {
         this.removePseudoClass(el, pseudoClass);
       });
     }
@@ -157,7 +158,7 @@ export class Harness<E extends HTMLElement = HTMLElement> {
   async startClickWithKeyboard(init: KeyboardEventInit = {}) {
     const element = await this.getInteractiveElement();
     await this.focusWithKeyboard(init);
-    this.simulateKeydown(element, init.key ?? " ", init);
+    this.simulateKeydown(element, init.key ?? ' ', init);
     this.simulateClick(element, init);
   }
 
@@ -169,7 +170,7 @@ export class Harness<E extends HTMLElement = HTMLElement> {
    */
   async endClickWithKeyboard(init: KeyboardEventInit = {}) {
     const element = await this.getInteractiveElement();
-    this.simulateKeyup(element, init.key ?? " ", init);
+    this.simulateKeyup(element, init.key ?? ' ', init);
     this.simulateClick(element, init);
   }
 
@@ -248,7 +249,7 @@ export class Harness<E extends HTMLElement = HTMLElement> {
   async endTapClick(init: PointerEventInit = {}) {
     const element = await this.getInteractiveElement();
     this.simulateClick(element, {
-      pointerType: "touch",
+      pointerType: 'touch',
       ...init,
     });
   }
@@ -330,7 +331,7 @@ export class Harness<E extends HTMLElement = HTMLElement> {
     if (!form) {
       return new FormData();
     }
-    return new Promise<FormData>((resolve) => {
+    return new Promise<FormData>(resolve => {
       const submitListener = (event: SubmitEvent) => {
         event.preventDefault();
         const data = new FormData(form);
@@ -338,7 +339,7 @@ export class Harness<E extends HTMLElement = HTMLElement> {
         return false;
       };
 
-      form.addEventListener("submit", submitListener, { once: true });
+      form.addEventListener('submit', submitListener, { once: true });
       form.requestSubmit();
     });
   }
@@ -372,17 +373,17 @@ export class Harness<E extends HTMLElement = HTMLElement> {
     if (element.shadowRoot) {
       transformPseudoClasses(
         element.shadowRoot.adoptedStyleSheets || [],
-        this.transformPseudoClasses
+        this.transformPseudoClasses,
       );
     }
 
     transformPseudoClasses(
       Array.from(root.styleSheets),
-      this.transformPseudoClasses
+      this.transformPseudoClasses,
     );
     transformPseudoClasses(
       root.adoptedStyleSheets || [],
-      this.transformPseudoClasses
+      this.transformPseudoClasses,
     );
     element.classList.add(getTransformedPseudoClass(pseudoClass));
     this.patchForTransformedPseudoClasses(element);
@@ -408,10 +409,10 @@ export class Harness<E extends HTMLElement = HTMLElement> {
     // Firefox does not support some simulations with PointerEvents, such as
     // selecting an <input type="checkbox">. Use MouseEvent for browser support.
     element.dispatchEvent(
-      new MouseEvent("click", {
+      new MouseEvent('click', {
         ...this.createMouseEventInit(element),
         ...init,
-      })
+      }),
     );
   }
 
@@ -423,15 +424,15 @@ export class Harness<E extends HTMLElement = HTMLElement> {
    */
   protected simulateContextmenu(
     element: HTMLElement,
-    init: MouseEventInit = {}
+    init: MouseEventInit = {},
   ) {
     element.dispatchEvent(
-      new MouseEvent("contextmenu", {
+      new MouseEvent('contextmenu', {
         ...this.createMouseEventInit(element),
         button: 2,
         buttons: 2,
         ...init,
-      })
+      }),
     );
   }
 
@@ -443,10 +444,10 @@ export class Harness<E extends HTMLElement = HTMLElement> {
    * @param element The element to focus with a keyboard.
    */
   protected simulateKeyboardFocus(element: HTMLElement) {
-    this.simulateKeydown(element.ownerDocument, "Tab");
-    this.addPseudoClass(element, ":focus-visible");
+    this.simulateKeydown(element.ownerDocument, 'Tab');
+    this.addPseudoClass(element, ':focus-visible');
     this.simulatePointerFocus(element);
-    this.simulateKeyup(element, "Tab");
+    this.simulateKeyup(element, 'Tab');
   }
 
   /**
@@ -455,13 +456,13 @@ export class Harness<E extends HTMLElement = HTMLElement> {
    * @param element The element to focus with a pointer.
    */
   protected simulatePointerFocus(element: HTMLElement) {
-    this.addPseudoClass(element, ":focus");
-    this.forEachNodeFrom(element, (el) => {
-      this.addPseudoClass(el, ":focus-within");
+    this.addPseudoClass(element, ':focus');
+    this.forEachNodeFrom(element, el => {
+      this.addPseudoClass(el, ':focus-within');
     });
-    element.dispatchEvent(new FocusEvent("focus", { composed: true }));
+    element.dispatchEvent(new FocusEvent('focus', { composed: true }));
     element.dispatchEvent(
-      new FocusEvent("focusin", { bubbles: true, composed: true })
+      new FocusEvent('focusin', { bubbles: true, composed: true }),
     );
   }
 
@@ -471,14 +472,14 @@ export class Harness<E extends HTMLElement = HTMLElement> {
    * @param element The element to blur.
    */
   protected simulateBlur(element: HTMLElement) {
-    this.removePseudoClass(element, ":focus");
-    this.removePseudoClass(element, ":focus-visible");
-    this.forEachNodeFrom(element, (el) => {
-      this.removePseudoClass(el, ":focus-within");
+    this.removePseudoClass(element, ':focus');
+    this.removePseudoClass(element, ':focus-visible');
+    this.forEachNodeFrom(element, el => {
+      this.removePseudoClass(el, ':focus-within');
     });
-    element.dispatchEvent(new FocusEvent("blur", { composed: true }));
+    element.dispatchEvent(new FocusEvent('blur', { composed: true }));
     element.dispatchEvent(
-      new FocusEvent("focusout", { bubbles: true, composed: true })
+      new FocusEvent('focusout', { bubbles: true, composed: true }),
     );
   }
 
@@ -490,10 +491,10 @@ export class Harness<E extends HTMLElement = HTMLElement> {
    */
   protected simulateStartHover(
     element: HTMLElement,
-    init: PointerEventInit = {}
+    init: PointerEventInit = {},
   ) {
-    this.forEachNodeFrom(element, (el) => {
-      this.addPseudoClass(el, ":hover");
+    this.forEachNodeFrom(element, el => {
+      this.addPseudoClass(el, ':hover');
     });
     const rect = element.getBoundingClientRect();
     const mouseInit = this.createMouseEventInit(element);
@@ -509,7 +510,7 @@ export class Harness<E extends HTMLElement = HTMLElement> {
     const pointerInit = {
       ...mouseInit,
       isPrimary: true,
-      pointerType: "mouse",
+      pointerType: 'mouse',
     };
 
     const pointerEnterInit: PointerEventInit = {
@@ -518,10 +519,10 @@ export class Harness<E extends HTMLElement = HTMLElement> {
       ...init,
     };
 
-    element.dispatchEvent(new PointerEvent("pointerover", pointerInit));
-    element.dispatchEvent(new PointerEvent("pointerenter", pointerEnterInit));
-    element.dispatchEvent(new MouseEvent("mouseover", mouseInit));
-    element.dispatchEvent(new MouseEvent("mouseenter", mouseEnterInit));
+    element.dispatchEvent(new PointerEvent('pointerover', pointerInit));
+    element.dispatchEvent(new PointerEvent('pointerenter', pointerEnterInit));
+    element.dispatchEvent(new MouseEvent('mouseover', mouseInit));
+    element.dispatchEvent(new MouseEvent('mouseenter', mouseEnterInit));
   }
 
   /**
@@ -532,10 +533,10 @@ export class Harness<E extends HTMLElement = HTMLElement> {
    */
   protected simulateEndHover(
     element: HTMLElement,
-    init: PointerEventInit = {}
+    init: PointerEventInit = {},
   ) {
-    this.forEachNodeFrom(element, (el) => {
-      this.removePseudoClass(el, ":hover");
+    this.forEachNodeFrom(element, el => {
+      this.removePseudoClass(el, ':hover');
     });
     const rect = element.getBoundingClientRect();
     const mouseInit = this.createMouseEventInit(element);
@@ -551,7 +552,7 @@ export class Harness<E extends HTMLElement = HTMLElement> {
     const pointerInit: PointerEventInit = {
       ...mouseInit,
       isPrimary: true,
-      pointerType: "mouse",
+      pointerType: 'mouse',
       ...init,
     };
 
@@ -560,10 +561,10 @@ export class Harness<E extends HTMLElement = HTMLElement> {
       ...mouseLeaveInit,
     };
 
-    element.dispatchEvent(new PointerEvent("pointerout", pointerInit));
-    element.dispatchEvent(new PointerEvent("pointerleave", pointerLeaveInit));
-    element.dispatchEvent(new MouseEvent("pointerout", mouseInit));
-    element.dispatchEvent(new MouseEvent("mouseleave", mouseLeaveInit));
+    element.dispatchEvent(new PointerEvent('pointerout', pointerInit));
+    element.dispatchEvent(new PointerEvent('pointerleave', pointerLeaveInit));
+    element.dispatchEvent(new MouseEvent('pointerout', mouseInit));
+    element.dispatchEvent(new MouseEvent('mouseleave', mouseLeaveInit));
   }
 
   /**
@@ -574,22 +575,22 @@ export class Harness<E extends HTMLElement = HTMLElement> {
    */
   protected simulateMousePress(
     element: HTMLElement,
-    init: PointerEventInit = {}
+    init: PointerEventInit = {},
   ) {
-    this.addPseudoClass(element, ":active");
-    this.forEachNodeFrom(element, (el) => {
-      this.addPseudoClass(el, ":active");
+    this.addPseudoClass(element, ':active');
+    this.forEachNodeFrom(element, el => {
+      this.addPseudoClass(el, ':active');
     });
     const mouseInit = this.createMouseEventInit(element);
     const pointerInit: PointerEventInit = {
       ...mouseInit,
       isPrimary: true,
-      pointerType: "mouse",
+      pointerType: 'mouse',
       ...init,
     };
 
-    element.dispatchEvent(new PointerEvent("pointerdown", pointerInit));
-    element.dispatchEvent(new MouseEvent("mousedown", mouseInit));
+    element.dispatchEvent(new PointerEvent('pointerdown', pointerInit));
+    element.dispatchEvent(new MouseEvent('mousedown', mouseInit));
     this.simulatePointerFocus(element);
   }
 
@@ -601,22 +602,22 @@ export class Harness<E extends HTMLElement = HTMLElement> {
    */
   protected simulateMouseRelease(
     element: HTMLElement,
-    init: PointerEventInit = {}
+    init: PointerEventInit = {},
   ) {
-    this.removePseudoClass(element, ":active");
-    this.forEachNodeFrom(element, (el) => {
-      this.removePseudoClass(el, ":active");
+    this.removePseudoClass(element, ':active');
+    this.forEachNodeFrom(element, el => {
+      this.removePseudoClass(el, ':active');
     });
     const mouseInit = this.createMouseEventInit(element);
     const pointerInit: PointerEventInit = {
       ...mouseInit,
       isPrimary: true,
-      pointerType: "mouse",
+      pointerType: 'mouse',
       ...init,
     };
 
-    element.dispatchEvent(new PointerEvent("pointerup", pointerInit));
-    element.dispatchEvent(new MouseEvent("mouseup", mouseInit));
+    element.dispatchEvent(new PointerEvent('pointerup', pointerInit));
+    element.dispatchEvent(new MouseEvent('mouseup', mouseInit));
   }
 
   /**
@@ -628,31 +629,31 @@ export class Harness<E extends HTMLElement = HTMLElement> {
   protected simulateTouchPress(
     element: HTMLElement,
     init: PointerEventInit = {},
-    touchInit: TouchEventInit = {}
+    touchInit: TouchEventInit = {},
   ) {
-    this.addPseudoClass(element, ":active");
-    this.forEachNodeFrom(element, (el) => {
-      this.addPseudoClass(el, ":active");
+    this.addPseudoClass(element, ':active');
+    this.forEachNodeFrom(element, el => {
+      this.addPseudoClass(el, ':active');
     });
     const mouseInit = this.createMouseEventInit(element);
     const pointerInit: PointerEventInit = {
       ...mouseInit,
       isPrimary: true,
-      pointerType: "touch",
+      pointerType: 'touch',
       ...init,
     };
 
-    element.dispatchEvent(new PointerEvent("pointerdown", pointerInit));
+    element.dispatchEvent(new PointerEvent('pointerdown', pointerInit));
     // Firefox does not support TouchEvent constructor
     if (window.TouchEvent) {
       const touch = this.createTouch(element);
       element.dispatchEvent(
-        new TouchEvent("touchstart", {
+        new TouchEvent('touchstart', {
           touches: [touch],
           targetTouches: [touch],
           changedTouches: [touch],
           ...touchInit,
-        })
+        }),
       );
     }
     this.simulatePointerFocus(element);
@@ -667,26 +668,26 @@ export class Harness<E extends HTMLElement = HTMLElement> {
   protected simulateTouchRelease(
     element: HTMLElement,
     init: PointerEventInit = {},
-    touchInit: TouchEventInit = {}
+    touchInit: TouchEventInit = {},
   ) {
-    this.removePseudoClass(element, ":active");
-    this.forEachNodeFrom(element, (el) => {
-      this.removePseudoClass(el, ":active");
+    this.removePseudoClass(element, ':active');
+    this.forEachNodeFrom(element, el => {
+      this.removePseudoClass(el, ':active');
     });
     const mouseInit = this.createMouseEventInit(element);
     const pointerInit: PointerEventInit = {
       ...mouseInit,
       isPrimary: true,
-      pointerType: "touch",
+      pointerType: 'touch',
       ...init,
     };
 
-    element.dispatchEvent(new PointerEvent("pointerup", pointerInit));
+    element.dispatchEvent(new PointerEvent('pointerup', pointerInit));
     // Firefox does not support TouchEvent constructor
     if (window.TouchEvent) {
       const touch = this.createTouch(element);
       element.dispatchEvent(
-        new TouchEvent("touchend", { changedTouches: [touch], ...touchInit })
+        new TouchEvent('touchend', { changedTouches: [touch], ...touchInit }),
       );
     }
   }
@@ -700,29 +701,29 @@ export class Harness<E extends HTMLElement = HTMLElement> {
   protected simulateTouchCancel(
     element: HTMLElement,
     init: PointerEventInit = {},
-    touchInit: TouchEventInit = {}
+    touchInit: TouchEventInit = {},
   ) {
-    this.removePseudoClass(element, ":active");
-    this.forEachNodeFrom(element, (el) => {
-      this.removePseudoClass(el, ":active");
+    this.removePseudoClass(element, ':active');
+    this.forEachNodeFrom(element, el => {
+      this.removePseudoClass(el, ':active');
     });
     const mouseInit = this.createMouseEventInit(element);
     const pointerInit: PointerEventInit = {
       ...mouseInit,
       isPrimary: true,
-      pointerType: "touch",
+      pointerType: 'touch',
       ...init,
     };
 
-    element.dispatchEvent(new PointerEvent("pointercancel", pointerInit));
+    element.dispatchEvent(new PointerEvent('pointercancel', pointerInit));
     // Firefox does not support TouchEvent constructor
     if (window.TouchEvent) {
       const touch = this.createTouch(element);
       element.dispatchEvent(
-        new TouchEvent("touchcancel", {
+        new TouchEvent('touchcancel', {
           changedTouches: [touch],
           ...touchInit,
-        })
+        }),
       );
     }
   }
@@ -737,7 +738,7 @@ export class Harness<E extends HTMLElement = HTMLElement> {
   protected simulateKeypress(
     element: EventTarget,
     key: string,
-    init: KeyboardEventInit = {}
+    init: KeyboardEventInit = {},
   ) {
     this.simulateKeydown(element, key, init);
     this.simulateKeyup(element, key, init);
@@ -753,16 +754,16 @@ export class Harness<E extends HTMLElement = HTMLElement> {
   protected simulateKeydown(
     element: EventTarget,
     key: string,
-    init: KeyboardEventInit = {}
+    init: KeyboardEventInit = {},
   ) {
     element.dispatchEvent(
-      new KeyboardEvent("keydown", {
+      new KeyboardEvent('keydown', {
         ...init,
         key,
         bubbles: true,
         composed: true,
         cancelable: true,
-      })
+      }),
     );
   }
 
@@ -776,16 +777,16 @@ export class Harness<E extends HTMLElement = HTMLElement> {
   protected simulateKeyup(
     element: EventTarget,
     key: string,
-    init: KeyboardEventInit = {}
+    init: KeyboardEventInit = {},
   ) {
     element.dispatchEvent(
-      new KeyboardEvent("keyup", {
+      new KeyboardEvent('keyup', {
         ...init,
         key,
         bubbles: true,
         composed: true,
         cancelable: true,
-      })
+      }),
     );
   }
 
@@ -833,7 +834,7 @@ export class Harness<E extends HTMLElement = HTMLElement> {
       screenY: (rect.top + rect.bottom) / 2,
       pageX: (rect.left + rect.right) / 2,
       pageY: (rect.top + rect.bottom) / 2,
-      touchType: "direct",
+      touchType: 'direct',
     });
   }
 
@@ -852,7 +853,7 @@ export class Harness<E extends HTMLElement = HTMLElement> {
   protected forEachNodeFrom(
     child: HTMLElement,
     callback: (node: HTMLElement) => void,
-    parent: HTMLElement = this.element
+    parent: HTMLElement = this.element,
   ) {
     let nextNode: Node | null = child;
     while (nextNode && nextNode !== this.element) {
@@ -866,8 +867,8 @@ export class Harness<E extends HTMLElement = HTMLElement> {
       callback(currentNode);
 
       if (nextNode instanceof HTMLElement && nextNode.shadowRoot) {
-        const slot = currentNode.getAttribute("slot");
-        const slotSelector = slot ? `slot[name=${slot}]` : "slot:not([name])";
+        const slot = currentNode.getAttribute('slot');
+        const slotSelector = slot ? `slot[name=${slot}]` : 'slot:not([name])';
         const slotElement =
           nextNode.shadowRoot.querySelector<HTMLSlotElement>(slotSelector);
         if (slotElement) {
@@ -903,19 +904,16 @@ export class Harness<E extends HTMLElement = HTMLElement> {
     };
 
     const superMatches = this.element.matches;
-    element.matches = (selector: string) => {
-      return superMatches.call(element, getSelector(selector));
-    };
+    element.matches = (selector: string) =>
+      superMatches.call(element, getSelector(selector));
 
     const superQuerySelector = this.element.querySelector;
-    element.querySelector = (selector: string) => {
-      return superQuerySelector.call(element, getSelector(selector));
-    };
+    element.querySelector = (selector: string) =>
+      superQuerySelector.call(element, getSelector(selector));
 
     const superQuerySelectorAll = this.element.querySelectorAll;
-    element.querySelectorAll = (selector: string) => {
-      return superQuerySelectorAll.call(element, getSelector(selector));
-    };
+    element.querySelectorAll = (selector: string) =>
+      superQuerySelectorAll.call(element, getSelector(selector));
 
     this.patchedElements.add(element);
   }

@@ -1,78 +1,79 @@
-import { html } from "lit";
-import type { Meta, StoryObj } from "@storybook/web-components";
+import { html } from 'lit';
+import type { Meta, StoryObj } from '@storybook/web-components';
 
-import { OscdAppBar } from "app-bar/OscdAppBar";
-import { OscdFilledButton } from "button/OscdFilledButton";
-import { OscdTextButton } from "button/OscdTextButton";
-import { OscdDialog } from "dialog/OscdDialog";
-import { OscdDivider } from "divider/OscdDivider";
-import { OscdFilledSelect } from "select/OscdFilledSelect";
-import { OscdOutlinedSelect } from "select/OscdOutlinedSelect";
-import { OscdSelectOption } from "select/OscdSelectOption";
-import { OscdFilledIconButton } from "iconbutton/OscdFilledIconButton";
-import { OscdFilledTonalIconButton } from "iconbutton/OscdFilledTonalIconButton";
-import { OscdIconButton } from "iconbutton/OscdIconButton";
-import { OscdIcon } from "icon/OscdIcon";
-import { OscdList } from "list/OscdList";
-import { OscdListItem } from "list/OscdListItem";
-import { CloseMenuEvent, OscdMenu } from "menu/OscdMenu";
-import { OscdMenuItem } from "menu/OscdMenuItem";
-import { OscdNavigationDrawer } from "navigation-drawer/OscdNavigationDrawer";
-import { OscdNavigationDrawerHeader } from "navigation-drawer/OscdNavigationDrawerHeader";
-import { OscdPrimaryTab } from "tabs/OscdPrimaryTab";
-import { OscdSecondaryTab } from "tabs/OscdSecondaryTab";
-import { OscdTabs } from "tabs/OscdTabs";
-import { scopedWcDecorator } from "utils/storybook/scopedWcDecorator.js";
-import { OscdOutlinedButton } from "button/OscdOutlinedButton";
-import { OscdElevation } from "elevation/OscdElevation";
-import { useArgs } from "@storybook/preview-api";
+import { OscdAppBar } from 'app-bar/OscdAppBar';
+import { OscdFilledButton } from 'button/OscdFilledButton';
+import { OscdTextButton } from 'button/OscdTextButton';
+import { OscdDialog } from 'dialog/OscdDialog';
+import { OscdDivider } from 'divider/OscdDivider';
+import { OscdFilledSelect } from 'select/OscdFilledSelect';
+import { OscdOutlinedSelect } from 'select/OscdOutlinedSelect';
+import { OscdSelectOption } from 'select/OscdSelectOption';
+import { OscdFilledIconButton } from 'iconbutton/OscdFilledIconButton';
+import { OscdFilledTonalIconButton } from 'iconbutton/OscdFilledTonalIconButton';
+import { OscdIconButton } from 'iconbutton/OscdIconButton';
+import { OscdIcon } from 'icon/OscdIcon';
+import { OscdList } from 'list/OscdList';
+import { OscdListItem } from 'list/OscdListItem';
+import { CloseMenuEvent, OscdMenu } from 'menu/OscdMenu';
+import { OscdMenuItem } from 'menu/OscdMenuItem';
+import { OscdNavigationDrawer } from 'navigation-drawer/OscdNavigationDrawer';
+import { OscdNavigationDrawerHeader } from 'navigation-drawer/OscdNavigationDrawerHeader';
+import { OscdPrimaryTab } from 'tabs/OscdPrimaryTab';
+import { OscdSecondaryTab } from 'tabs/OscdSecondaryTab';
+import { OscdTabs } from 'tabs/OscdTabs';
+import { scopedWcDecorator } from 'utils/storybook/scopedWcDecorator.js';
+import { OscdOutlinedButton } from 'button/OscdOutlinedButton';
+import { OscdElevation } from 'elevation/OscdElevation';
+import { useArgs } from '@storybook/preview-api';
+import { action } from '@storybook/addon-actions';
 
 const meta: Meta = {
-  title: "Open SCD/All Components",
+  title: 'Open SCD/All Components',
   decorators: [scopedWcDecorator],
   parameters: {
-    layout: "fullscreen",
+    layout: 'fullscreen',
     scopedElements: {
-      "oscd-app-bar": OscdAppBar,
-      "oscd-filled-button": OscdFilledButton,
-      "oscd-outlined-button": OscdOutlinedButton,
-      "oscd-text-button": OscdTextButton,
-      "oscd-dialog": OscdDialog,
-      "oscd-divider": OscdDivider,
-      "oscd-filled-select": OscdFilledSelect,
-      "oscd-outlined-select": OscdOutlinedSelect,
-      "oscd-select-option": OscdSelectOption,
-      "oscd-filled-icon-button": OscdFilledIconButton,
-      "oscd-filled-tonal-icon-button": OscdFilledTonalIconButton,
-      "oscd-icon-button": OscdIconButton,
-      "oscd-icon": OscdIcon,
-      "oscd-list": OscdList,
-      "oscd-list-item": OscdListItem,
-      "oscd-menu": OscdMenu,
-      "oscd-menu-item": OscdMenuItem,
-      "oscd-navigation-drawer": OscdNavigationDrawer,
-      "oscd-navigation-drawer-header": OscdNavigationDrawerHeader,
-      "oscd-primary-tab": OscdPrimaryTab,
-      "oscd-secondary-tab": OscdSecondaryTab,
-      "oscd-tabs": OscdTabs,
-      "oscd-elevation": OscdElevation,
+      'oscd-app-bar': OscdAppBar,
+      'oscd-filled-button': OscdFilledButton,
+      'oscd-outlined-button': OscdOutlinedButton,
+      'oscd-text-button': OscdTextButton,
+      'oscd-dialog': OscdDialog,
+      'oscd-divider': OscdDivider,
+      'oscd-filled-select': OscdFilledSelect,
+      'oscd-outlined-select': OscdOutlinedSelect,
+      'oscd-select-option': OscdSelectOption,
+      'oscd-filled-icon-button': OscdFilledIconButton,
+      'oscd-filled-tonal-icon-button': OscdFilledTonalIconButton,
+      'oscd-icon-button': OscdIconButton,
+      'oscd-icon': OscdIcon,
+      'oscd-list': OscdList,
+      'oscd-list-item': OscdListItem,
+      'oscd-menu': OscdMenu,
+      'oscd-menu-item': OscdMenuItem,
+      'oscd-navigation-drawer': OscdNavigationDrawer,
+      'oscd-navigation-drawer-header': OscdNavigationDrawerHeader,
+      'oscd-primary-tab': OscdPrimaryTab,
+      'oscd-secondary-tab': OscdSecondaryTab,
+      'oscd-tabs': OscdTabs,
+      'oscd-elevation': OscdElevation,
     },
   },
   argTypes: {
     navOpened: {
-      control: { type: "boolean" },
-      description: "Navigation drawer opened state",
+      control: { type: 'boolean' },
+      description: 'Navigation drawer opened state',
     },
     menuOpened: {
-      control: { type: "boolean" },
-      description: "Menu opened state",
+      control: { type: 'boolean' },
+      description: 'Menu opened state',
     },
     tabCount: {
-      control: { type: "number" },
-      description: "Number of tabs in App Bar",
+      control: { type: 'number' },
+      description: 'Number of tabs in App Bar',
     },
   },
-  render: (args) => {
+  render: ({ dialogOpen, navOpened, tabCount, menuOpened }) => {
     const [_, updateArgs] = useArgs();
     return html`
       <style>
@@ -114,7 +115,7 @@ const meta: Meta = {
             ><oscd-icon>settings</oscd-icon></oscd-filled-icon-button
           >
           <oscd-menu
-            ?open=${args["menuOpened"]}
+            ?open=${menuOpened}
             id="appBarMenu"
             anchor="appBarMenuButton"
             surfaceCorner="end-end"
@@ -134,16 +135,16 @@ const meta: Meta = {
           >
         </div>
         <oscd-tabs style="width: 100%">
-          ${new Array(args["tabCount"] || 2)
+          ${new Array(tabCount || 2)
             .fill(null)
             .map(
-              (_, index) =>
-                html`<oscd-secondary-tab>Tab ${index}</oscd-secondary-tab>`
+              (__, index) =>
+                html`<oscd-secondary-tab>Tab ${index}</oscd-secondary-tab>`,
             )}
         </oscd-tabs>
       </oscd-app-bar>
       <oscd-navigation-drawer
-        ?opened=${args["navOpened"]}
+        ?opened=${navOpened}
         @navigation-drawer-changed=${({ detail }: CustomEvent) => {
           if (!detail.opened) {
             updateArgs({ navOpened: false });
@@ -233,11 +234,10 @@ const meta: Meta = {
                 @click=${(event: Event) => {
                   const menu = (
                     event.target as Element
-                  )?.parentElement?.querySelector("#menu") as OscdMenu;
-                  console.log("menu", menu);
+                  )?.parentElement?.querySelector('#menu') as OscdMenu;
                   if (menu) {
                     menu.open = !menu.open;
-                    console.log("menu open", menu.open);
+                    action('menu click')({ menu_open: menu.open, event });
                   }
                 }}
                 >Open Menu</oscd-filled-button
@@ -247,7 +247,7 @@ const meta: Meta = {
                 position="relative"
                 anchor="menu-button"
                 @close-menu=${({ detail }: CloseMenuEvent) => {
-                  console.log("menu closed", detail);
+                  action('menu closed')({ detail });
                 }}
               >
                 <oscd-menu-item>Option A</oscd-menu-item>
@@ -262,14 +262,15 @@ const meta: Meta = {
           <h3>Dialog</h3>
           <div>
             <oscd-filled-button
-              @click=${(event: Event) => {
+              @click=${() => {
                 updateArgs({ dialogOpen: true });
               }}
               >Open Dialog</oscd-filled-button
             >
             <oscd-dialog
-              ?open=${args["dialogOpen"]}
+              ?open=${dialogOpen}
               @closed=${(event: CustomEvent) => {
+                action('dialog closed')({ event });
                 updateArgs({ dialogOpen: false });
               }}
             >

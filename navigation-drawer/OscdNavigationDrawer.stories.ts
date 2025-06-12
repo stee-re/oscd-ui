@@ -1,41 +1,42 @@
-import { html } from "lit";
-import type { Meta, StoryObj } from "@storybook/web-components";
+import { html } from 'lit';
+import type { Meta, StoryObj } from '@storybook/web-components';
 
-import { OscdNavigationDrawer } from "navigation-drawer/OscdNavigationDrawer";
-import { OscdList } from "list/OscdList";
-import { OscdListItem } from "list/OscdListItem";
-import { scopedWcDecorator } from "utils/storybook/scopedWcDecorator.js";
-import { useArgs } from "@storybook/preview-api";
-import { OscdIcon } from "icon/OscdIcon";
-import { OscdNavigationDrawerHeader } from "./OscdNavigationDrawerHeader";
-import { OscdAppBar } from "app-bar/OscdAppBar";
-import { OscdFilledIconButton } from "iconbutton/OscdFilledIconButton";
+import { OscdNavigationDrawer } from 'navigation-drawer/OscdNavigationDrawer';
+import { OscdList } from 'list/OscdList';
+import { OscdListItem } from 'list/OscdListItem';
+import { scopedWcDecorator } from 'utils/storybook/scopedWcDecorator.js';
+import { useArgs } from '@storybook/preview-api';
+import { OscdIcon } from 'icon/OscdIcon';
+import { OscdAppBar } from 'app-bar/OscdAppBar';
+import { OscdFilledIconButton } from 'iconbutton/OscdFilledIconButton';
+import { action } from '@storybook/addon-actions';
+import { OscdNavigationDrawerHeader } from './OscdNavigationDrawerHeader.js';
 
 const meta: Meta<OscdNavigationDrawer & { label: string }> = {
-  title: "Library/Navigation Drawer/Navigation Drawer",
-  component: "oscd-navigation-drawer",
-  tags: ["autodocs"],
+  title: 'Library/Navigation Drawer/Navigation Drawer',
+  component: 'oscd-navigation-drawer',
+  tags: ['autodocs'],
   decorators: [scopedWcDecorator],
   parameters: {
-    layout: "fullscreen",
+    layout: 'fullscreen',
     scopedElements: {
-      "oscd-navigation-drawer": OscdNavigationDrawer,
-      "oscd-navigation-drawer-header": OscdNavigationDrawerHeader,
-      "oscd-app-bar": OscdAppBar,
-      "oscd-list": OscdList,
-      "oscd-list-item": OscdListItem,
-      "oscd-filled-icon-button": OscdFilledIconButton,
-      "oscd-icon": OscdIcon,
+      'oscd-navigation-drawer': OscdNavigationDrawer,
+      'oscd-navigation-drawer-header': OscdNavigationDrawerHeader,
+      'oscd-app-bar': OscdAppBar,
+      'oscd-list': OscdList,
+      'oscd-list-item': OscdListItem,
+      'oscd-filled-icon-button': OscdFilledIconButton,
+      'oscd-icon': OscdIcon,
     },
   },
   argTypes: {
     label: {
-      control: { type: "text" },
-      description: "Navigation drawer Header label",
+      control: { type: 'text' },
+      description: 'Navigation drawer Header label',
     },
     opened: {
-      control: { type: "boolean" },
-      description: "Menu opened state",
+      control: { type: 'boolean' },
+      description: 'Menu opened state',
     },
   },
   render: ({ label, opened }) => {
@@ -52,7 +53,7 @@ const meta: Meta<OscdNavigationDrawer & { label: string }> = {
       <oscd-navigation-drawer
         ?opened=${opened}
         @navigation-drawer-changed=${({ detail }: CustomEvent) => {
-          console.log("nav drawer changed", detail);
+          action('navigation-drawer-changed')({ detail });
           if (!detail.opened) {
             updateArgs({ opened: false });
           }
@@ -97,7 +98,7 @@ type Story = StoryObj;
 
 export const Default: Story = {
   args: {
-    label: "Menu",
+    label: 'Menu',
     opened: false,
   },
 };

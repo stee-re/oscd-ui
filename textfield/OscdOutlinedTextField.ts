@@ -9,13 +9,13 @@
  * Copyright 2025 OMICRON Electronics GmbH
  * SPDX-License-Identifier: Apache-2.0
  */
-import { CSSResultOrNative } from "lit";
-import { OscdOutlinedField } from "../field/OscdOutlinedField";
-import { ScopedElementsMixin } from "@open-wc/scoped-elements/lit-element.js";
-import { literal } from "lit/static-html.js";
-import { styles as outlinedStyles } from "@material/web/textfield/internal/outlined-styles.js";
-import { OutlinedTextField } from "@material/web/textfield/internal/outlined-text-field.js";
-import { styles as sharedStyles } from "@material/web/textfield/internal/shared-styles.js";
+import { CSSResultOrNative } from 'lit';
+import { ScopedElementsMixin } from '@open-wc/scoped-elements/lit-element.js';
+import { literal } from 'lit/static-html.js';
+import { styles as outlinedStyles } from '@material/web/textfield/internal/outlined-styles.js';
+import { OutlinedTextField } from '@material/web/textfield/internal/outlined-text-field.js';
+import { styles as sharedStyles } from '@material/web/textfield/internal/shared-styles.js';
+import { OscdOutlinedField } from '../field/OscdOutlinedField.js';
 
 // export { type TextFieldType } from "@material/web/textfield/internal/text-field.js";
 
@@ -26,13 +26,13 @@ import { styles as sharedStyles } from "@material/web/textfield/internal/shared-
  * @suppress {visibility}
  */
 export class OscdOutlinedTextField extends ScopedElementsMixin(
-  OutlinedTextField
+  OutlinedTextField,
 ) {
   static override styles: CSSResultOrNative[] = [sharedStyles, outlinedStyles];
 
   static get scopedElements() {
     return {
-      "oscd-outlined-field": OscdOutlinedField,
+      'oscd-outlined-field': OscdOutlinedField,
     };
   }
 

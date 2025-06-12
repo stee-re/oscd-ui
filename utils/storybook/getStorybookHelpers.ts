@@ -1,8 +1,8 @@
-import { getStorybookHelpers as wcToolkitGetStorybookHelpers } from "@wc-toolkit/storybook-helpers";
-import type { StoryOptions, StoryHelpers } from "@wc-toolkit/storybook-helpers";
+import { getStorybookHelpers as wcToolkitGetStorybookHelpers } from '@wc-toolkit/storybook-helpers';
+import type { StoryOptions, StoryHelpers } from '@wc-toolkit/storybook-helpers';
 
-import { html } from "lit";
-import { DecoratorFunction } from "storybook/internal/types";
+import { html } from 'lit';
+import { DecoratorFunction } from 'storybook/internal/types';
 
 /*
  * This is a Decorator/Helper utility for enriching Storybook stories with CSS variable support.
@@ -20,9 +20,9 @@ export const storybookHelperDecorator: DecoratorFunction = (
   const args = context.args || {};
 
   const variableDeclarations = Object.entries(args)
-    .filter(([key]) => key.startsWith("--"))
-    .map(([key, value]) => `${key.replace(/-state$/, "")}: ${value};`)
-    .join("\n");
+    .filter(([key]) => key.startsWith('--'))
+    .map(([key, value]) => `${key.replace(/-state$/, '')}: ${value};`)
+    .join('\n');
   const styles = `* {\n${variableDeclarations}\n}`;
   return html`
     <style>
@@ -41,7 +41,7 @@ export const getStorybookHelpers = <T>(
   tagName: string,
   options?: StoryOptions,
 ): StoryHelpers<T> => {
-  const { args, argTypes, ...rest } = wcToolkitGetStorybookHelpers<T>(
+  const { argTypes, ...rest } = wcToolkitGetStorybookHelpers<T>(
     tagName,
     options,
   );
@@ -51,13 +51,13 @@ export const getStorybookHelpers = <T>(
       acc: Record<string, (typeof argTypes)[keyof typeof argTypes]>,
       [argTypeKey, argTypeValue],
     ) => {
-      if (argTypeKey.startsWith("--")) {
+      if (argTypeKey.startsWith('--')) {
         acc[argTypeKey] = {
           ...argTypeValue,
-          control: { type: argTypeKey.includes("color") ? "color" : "text" },
+          control: { type: argTypeKey.includes('color') ? 'color' : 'text' },
           table: {
             // @ts-ignore
-            category: "CSS Variables",
+            category: 'CSS Variables',
           },
         };
       } else {

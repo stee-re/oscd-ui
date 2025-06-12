@@ -1,3 +1,4 @@
+/* eslint-disable */
 /**
  * @license
  * Copyright 2021 Google LLC
@@ -6,9 +7,9 @@
 
 // import 'jasmine'; (google3-only)
 
-import { ReactiveElement, TemplateResult, render as litRender } from "lit";
+import { ReactiveElement, TemplateResult, render as litRender } from 'lit';
 
-import { installSkipWebAnimations } from "./skip-animations.js";
+import { installSkipWebAnimations } from './skip-animations.js';
 
 /**
  * Test environment setup for screenshot tests.
@@ -22,15 +23,14 @@ export class Environment {
   constructor() {
     // Replace RAF with setTimeout, since setTimeout is overridden to be
     // synchronous in Jasmine clock installation.
-    window.requestAnimationFrame = (callback: FrameRequestCallback) => {
-      return setTimeout(callback, 1);
-    };
+    window.requestAnimationFrame = (callback: FrameRequestCallback) =>
+      setTimeout(callback, 1);
     window.cancelAnimationFrame = (id: number) => {
       clearTimeout(id);
     };
 
     beforeAll(() => {
-      console.log("Setting up the fucking clock");
+      console.log('Setting up the fucking clock');
       jasmine.clock().install();
     });
 
@@ -74,7 +74,7 @@ export class Environment {
    * @param root a parent node to wait for rendering on.
    */
   private async waitForLitRender(root: ParentNode) {
-    for (const element of Array.from(root.querySelectorAll("*"))) {
+    for (const element of Array.from(root.querySelectorAll('*'))) {
       if (this.isReactiveElement(element)) {
         await element.updateComplete;
         await this.waitForLitRender(element.renderRoot);
@@ -119,9 +119,9 @@ export class Environment {
       currentRoot.remove();
     }
 
-    const root = document.createElement("div");
-    root.id = "root";
-    root.style.display = "inline-flex";
+    const root = document.createElement('div');
+    root.id = 'root';
+    root.style.display = 'inline-flex';
     document.body.appendChild(root);
     this.roots.push(root);
     return root;

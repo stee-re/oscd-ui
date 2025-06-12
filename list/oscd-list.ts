@@ -1,10 +1,10 @@
-import { OscdList } from "./OscdList";
+import { OscdList } from './OscdList.js';
 
 declare global {
   interface HTMLElementTagNameMap {
-    "oscd-list": OscdList;
+    'oscd-list': OscdList;
   }
 }
 
-customElements.define("oscd-list", OscdList);
+customElements.define('oscd-list', OscdList);
 export { OscdList };

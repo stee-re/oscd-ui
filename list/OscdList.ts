@@ -9,9 +9,9 @@
  * Copyright 2025 OMICRON Electronics GmbH
  * SPDX-License-Identifier: Apache-2.0
  */
-import { css, CSSResultOrNative } from "lit";
-import { List } from "@material/web/list/internal/list.js";
-import { styles } from "@material/web/list/internal/list-styles.js";
+import { css, CSSResultOrNative } from 'lit';
+import { List } from '@material/web/list/internal/list.js';
+import { styles } from '@material/web/list/internal/list-styles.js';
 
 const overrideStyles = css`
   :host {

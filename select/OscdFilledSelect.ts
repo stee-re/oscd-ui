@@ -9,10 +9,10 @@
  * Copyright 2025 OMICRON Electronics GmbH
  * SPDX-License-Identifier: Apache-2.0
  */
-import { CSSResultOrNative } from "lit";
-import { FilledSelect } from "@material/web/select/internal/filled-select.js";
-import { styles } from "@material/web/select/internal/filled-select-styles.js";
-import { styles as sharedStyles } from "@material/web/select/internal/shared-styles.js";
+import { CSSResultOrNative } from 'lit';
+import { FilledSelect } from '@material/web/select/internal/filled-select.js';
+import { styles } from '@material/web/select/internal/filled-select-styles.js';
+import { styles as sharedStyles } from '@material/web/select/internal/shared-styles.js';
 
 /**
  * @tag oscd-filled-select

@@ -9,9 +9,9 @@
  * Copyright 2025 OMICRON Electronics GmbH
  * SPDX-License-Identifier: Apache-2.0
  */
-import { LitElement, html, css } from "lit";
-import { OscdElevation } from "../elevation/OscdElevation.js";
-import { ScopedElementsMixin } from "@open-wc/scoped-elements/lit-element.js";
+import { LitElement, html, css } from 'lit';
+import { ScopedElementsMixin } from '@open-wc/scoped-elements/lit-element.js';
+import { OscdElevation } from '../elevation/OscdElevation.js';
 
 /**
  * @tag oscd-app-bar
@@ -42,7 +42,7 @@ import { ScopedElementsMixin } from "@open-wc/scoped-elements/lit-element.js";
 export class OscdAppBar extends ScopedElementsMixin(LitElement) {
   static get scopedElements() {
     return {
-      "oscd-elevation": OscdElevation,
+      'oscd-elevation': OscdElevation,
     };
   }
 
@@ -111,7 +111,7 @@ export class OscdAppBar extends ScopedElementsMixin(LitElement) {
       }
     }
 
-    ::slotted([slot="title"]) {
+    ::slotted([slot='title']) {
       display: flex;
       align-items: center;
       gap: 4px;

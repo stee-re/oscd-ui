@@ -1,3 +1,4 @@
+/* eslint-disable */
 /**
  * @license
  * Copyright 2021 Google LLC
@@ -125,11 +126,11 @@ function visitRule(
   }
 
   try {
-    let {selectorText} = rule;
+    let { selectorText } = rule;
     // match :foo, ensuring that it does not have a paren at the end
     // (no pseudo class functions like :foo())
     const regex = /(:(?![\w-]+\()[\w-]+)/g;
-    const matches = Array.from(selectorText.matchAll(regex)).filter((match) => {
+    const matches = Array.from(selectorText.matchAll(regex)).filter(match => {
       // don't match pseudo elements like ::foo
       if (match.index != null && selectorText[match.index - 1] === ':') {
         return false;
@@ -144,10 +145,12 @@ function visitRule(
     matches.reverse();
     selectorText = rearrangePseudoElements(selectorText);
     for (const match of matches) {
-      selectorText =
-        selectorText.substring(0, match.index!) +
-        `.${getTransformedPseudoClass(match[1])}` +
-        selectorText.substring(match.index! + match[1].length);
+      selectorText = `${selectorText.substring(
+        0,
+        match.index!,
+      )}.${getTransformedPseudoClass(match[1])}${selectorText.substring(
+        match.index! + match[1].length,
+      )}`;
     }
 
     const css = `${selectorText} {${rule.style.cssText}}`;

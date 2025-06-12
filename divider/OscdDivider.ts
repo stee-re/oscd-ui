@@ -9,10 +9,10 @@
  * Copyright 2025 OMICRON Electronics GmbH
  * SPDX-License-Identifier: Apache-2.0
  */
-import { CSSResultOrNative } from "lit";
+import { CSSResultOrNative } from 'lit';
 
-import { Divider } from "@material/web/divider/internal/divider.js";
-import { styles } from "@material/web/divider/internal/divider-styles.js";
+import { Divider } from '@material/web/divider/internal/divider.js';
+import { styles } from '@material/web/divider/internal/divider-styles.js';
 
 /**
  * @tag oscd-divider

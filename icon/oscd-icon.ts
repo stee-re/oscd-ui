@@ -1,10 +1,10 @@
-import { OscdIcon } from "./OscdIcon.js";
+import { OscdIcon } from './OscdIcon.js';
 
 declare global {
   interface HTMLElementTagNameMap {
-    "oscd-icon": OscdIcon;
+    'oscd-icon': OscdIcon;
   }
 }
 
-customElements.define("oscd-icon", OscdIcon);
+customElements.define('oscd-icon', OscdIcon);
 export { OscdIcon };

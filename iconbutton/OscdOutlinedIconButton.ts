@@ -9,10 +9,10 @@
  * Copyright 2025 OMICRON Electronics GmbH
  * SPDX-License-Identifier: Apache-2.0
  */
-import { CSSResultOrNative } from "lit";
-import { IconButton } from "@material/web/iconbutton/internal/icon-button.js";
-import { styles } from "@material/web/iconbutton/internal/outlined-styles.js";
-import { styles as sharedStyles } from "@material/web/iconbutton/internal/shared-styles.js";
+import { CSSResultOrNative } from 'lit';
+import { IconButton } from '@material/web/iconbutton/internal/icon-button.js';
+import { styles } from '@material/web/iconbutton/internal/outlined-styles.js';
+import { styles as sharedStyles } from '@material/web/iconbutton/internal/shared-styles.js';
 
 /**
  * @tag oscd-outlined-icon-button

@@ -9,10 +9,10 @@
  * Copyright 2025 OMICRON Electronics GmbH
  * SPDX-License-Identifier: Apache-2.0
  */
-import { css, CSSResult, CSSResultOrNative } from "lit";
-import { NavigationDrawerModal } from "@material/web/labs/navigationdrawer/internal/navigation-drawer-modal.js";
-import { styles } from "@material/web/labs/navigationdrawer/internal/navigation-drawer-modal-styles.js";
-import { styles as sharedStyles } from "@material/web/labs/navigationdrawer/internal/shared-styles.js";
+import { css, CSSResult, CSSResultOrNative } from 'lit';
+import { NavigationDrawerModal } from '@material/web/labs/navigationdrawer/internal/navigation-drawer-modal.js';
+import { styles } from '@material/web/labs/navigationdrawer/internal/navigation-drawer-modal-styles.js';
+import { styles as sharedStyles } from '@material/web/labs/navigationdrawer/internal/shared-styles.js';
 
 const overrideStyles = css`
   :host {

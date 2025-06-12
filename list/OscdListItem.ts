@@ -9,11 +9,11 @@
  * Copyright 2025 OMICRON Electronics GmbH
  * SPDX-License-Identifier: Apache-2.0
  */
-import { css, CSSResultOrNative } from "lit";
-import { ListItemEl as ListItem } from "@material/web/list/internal/listitem/list-item.js";
-import { styles } from "@material/web/list/internal/listitem/list-item-styles.js";
+import { css, CSSResultOrNative } from 'lit';
+import { ListItemEl as ListItem } from '@material/web/list/internal/listitem/list-item.js';
+import { styles } from '@material/web/list/internal/listitem/list-item-styles.js';
 
-export { type ListItemType } from "@material/web/list/internal/listitem/list-item.js";
+export { type ListItemType } from '@material/web/list/internal/listitem/list-item.js';
 
 const styleOverrides = css`
   :host([activated]) {
@@ -27,13 +27,13 @@ const styleOverrides = css`
       var(--md-sys-color-surface-bright, #eaddff)
     );
   }
-  [slot="start"] {
+  [slot='start'] {
     color: var(
       --md-list-item-leading-icon-color,
       var(--md-sys-color-on-surface, #49454f)
     );
   }
-  [slot="end"] {
+  [slot='end'] {
     color: var(
       --md-list-item-trailing-icon-color,
       var(--md-sys-color-on-surface, #49454f)

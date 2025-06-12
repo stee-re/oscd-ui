@@ -1,27 +1,27 @@
-import { html } from "lit";
-import type { Meta, StoryObj } from "@storybook/web-components";
+import { html } from 'lit';
+import type { Meta, StoryObj } from '@storybook/web-components';
 
-import { OscdDivider } from "divider/OscdDivider";
-import { scopedWcDecorator } from "utils/storybook/scopedWcDecorator.js";
+import { OscdDivider } from 'divider/OscdDivider';
+import { scopedWcDecorator } from 'utils/storybook/scopedWcDecorator.js';
 import {
   getStorybookHelpers,
   storybookHelperDecorator,
-} from "utils/storybook/getStorybookHelpers.js";
+} from 'utils/storybook/getStorybookHelpers.js';
 
-const { args, argTypes, template } = getStorybookHelpers("oscd-divider");
+const { args, argTypes, template } = getStorybookHelpers('oscd-divider');
 
 const meta: Meta<OscdDivider> = {
-  title: "Library/Divider",
-  component: "oscd-divider",
-  tags: ["autodocs"],
+  title: 'Library/Divider',
+  component: 'oscd-divider',
+  tags: ['autodocs'],
   decorators: [scopedWcDecorator, storybookHelperDecorator],
   parameters: {
-    layout: "centered",
+    layout: 'centered',
     scopedElements: {
-      "oscd-divider": OscdDivider,
+      'oscd-divider': OscdDivider,
     },
   },
-  render: (argz) => html`
+  render: argz => html`
     <div>
       <p>Above the divider</p>
       ${template(argz)}

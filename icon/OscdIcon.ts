@@ -9,9 +9,9 @@
  * Copyright 2025 OMICRON Electronics GmbH
  * SPDX-License-Identifier: Apache-2.0
  */
-import { CSSResultOrNative } from "lit";
-import { Icon } from "@material/web/icon/internal/icon.js";
-import { styles } from "@material/web/icon/internal/icon-styles.js";
+import { CSSResultOrNative } from 'lit';
+import { Icon } from '@material/web/icon/internal/icon.js';
+import { styles } from '@material/web/icon/internal/icon-styles.js';
 
 /**
  * @tag oscd-icon

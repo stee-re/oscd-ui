@@ -10,9 +10,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { css, CSSResultOrNative } from "lit";
-import { Dialog } from "@material/web/dialog/internal/dialog.js";
-import { styles } from "@material/web/dialog/internal/dialog-styles.js";
+import { css, CSSResultOrNative } from 'lit';
+import { Dialog } from '@material/web/dialog/internal/dialog.js';
+import { styles } from '@material/web/dialog/internal/dialog-styles.js';
 
 const styleOverrides = css`
   .scrim {

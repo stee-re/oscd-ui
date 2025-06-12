@@ -9,10 +9,10 @@
  * Copyright 2025 OMICRON Electronics GmbH
  * SPDX-License-Identifier: Apache-2.0
  */
-import { CSSResultOrNative } from "lit";
+import { CSSResultOrNative } from 'lit';
 
-import { Elevation } from "@material/web/elevation/internal/elevation.js";
-import { styles } from "@material/web/elevation/internal/elevation-styles.js";
+import { Elevation } from '@material/web/elevation/internal/elevation.js';
+import { styles } from '@material/web/elevation/internal/elevation-styles.js';
 
 /**
  * @tag oscd-elevation

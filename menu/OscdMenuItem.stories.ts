@@ -1,30 +1,30 @@
-import { html } from "lit";
-import type { Meta, StoryObj } from "@storybook/web-components";
-import { withActions } from "@storybook/addon-actions/decorator";
-import { OscdMenuItem } from "menu/OscdMenuItem";
-import { scopedWcDecorator } from "utils/storybook/scopedWcDecorator.js";
-import { OscdElevation } from "elevation/OscdElevation";
+import { html } from 'lit';
+import type { Meta, StoryObj } from '@storybook/web-components';
+import { withActions } from '@storybook/addon-actions/decorator';
+import { OscdMenuItem } from 'menu/OscdMenuItem';
+import { scopedWcDecorator } from 'utils/storybook/scopedWcDecorator.js';
+import { OscdElevation } from 'elevation/OscdElevation';
 import {
   getStorybookHelpers,
   storybookHelperDecorator,
-} from "utils/storybook/getStorybookHelpers.js";
+} from 'utils/storybook/getStorybookHelpers.js';
 
 const { args, argTypes, template, events } =
-  getStorybookHelpers("oscd-menu-item");
+  getStorybookHelpers('oscd-menu-item');
 
 const meta: Meta<OscdMenuItem & { textContent: string }> = {
-  title: "Library/Menus/Menu Item",
-  component: "oscd-menu-item",
-  tags: ["autodocs"],
+  title: 'Library/Menus/Menu Item',
+  component: 'oscd-menu-item',
+  tags: ['autodocs'],
   decorators: [withActions, scopedWcDecorator, storybookHelperDecorator],
   parameters: {
-    layout: "centered",
+    layout: 'centered',
     scopedElements: {
-      "oscd-menu-item": OscdMenuItem,
-      "oscd-elevation": OscdElevation,
+      'oscd-menu-item': OscdMenuItem,
+      'oscd-elevation': OscdElevation,
     },
     actions: {
-      handles: ["click", ...events],
+      handles: ['click', ...events],
     },
   },
   render: ({ textContent, ...argz }) => html`
@@ -36,9 +36,9 @@ const meta: Meta<OscdMenuItem & { textContent: string }> = {
   argTypes: {
     ...argTypes,
     textContent: {
-      name: "Text Content",
-      control: { type: "text" },
-      description: "Menu item label",
+      name: 'Text Content',
+      control: { type: 'text' },
+      description: 'Menu item label',
     },
   },
 };
@@ -48,7 +48,7 @@ type Story = StoryObj;
 
 export const Default: Story = {
   args: {
-    textContent: "Menu Item",
+    textContent: 'Menu Item',
     ...args,
   },
 };

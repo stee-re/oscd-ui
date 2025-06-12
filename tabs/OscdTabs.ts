@@ -9,9 +9,9 @@
  * Copyright 2025 OMICRON Electronics GmbH
  * SPDX-License-Identifier: Apache-2.0
  */
-import { CSSResultOrNative } from "lit";
-import { Tabs } from "@material/web/tabs/internal/tabs.js";
-import { styles } from "@material/web/tabs/internal/tabs-styles.js";
+import { CSSResultOrNative } from 'lit';
+import { Tabs } from '@material/web/tabs/internal/tabs.js';
+import { styles } from '@material/web/tabs/internal/tabs-styles.js';
 
 /**
  * @tag oscd-tabs

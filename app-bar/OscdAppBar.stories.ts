@@ -1,51 +1,54 @@
-import { html } from "lit";
-import type { Meta, StoryObj } from "@storybook/web-components";
+import { html } from 'lit';
+import type { Meta, StoryObj } from '@storybook/web-components';
 
-import { OscdAppBar } from "./OscdAppBar.js";
-import { OscdList } from "list/OscdList";
-import { OscdListItem } from "list/OscdListItem";
-import { OscdIcon } from "icon/OscdIcon";
-import { OscdTabs } from "tabs/OscdTabs";
-import { OscdSecondaryTab } from "tabs/OscdSecondaryTab";
-import { OscdDivider } from "../divider/OscdDivider.js";
-import { scopedWcDecorator } from "utils/storybook/scopedWcDecorator.js";
-import { OscdFilledIconButton } from "iconbutton/OscdFilledIconButton.js";
+import { OscdList } from 'list/OscdList';
+import { OscdListItem } from 'list/OscdListItem';
+import { OscdIcon } from 'icon/OscdIcon';
+import { OscdTabs } from 'tabs/OscdTabs';
+import { OscdSecondaryTab } from 'tabs/OscdSecondaryTab';
+import { scopedWcDecorator } from 'utils/storybook/scopedWcDecorator.js';
+import { OscdFilledIconButton } from 'iconbutton/OscdFilledIconButton.js';
 import {
   getStorybookHelpers,
   storybookHelperDecorator,
-} from "utils/storybook/getStorybookHelpers.js";
+} from 'utils/storybook/getStorybookHelpers.js';
+import { action } from '@storybook/addon-actions';
+import { OscdDivider } from '../divider/OscdDivider.js';
+import { OscdAppBar } from './OscdAppBar.js';
 
-const { args, argTypes, template } = getStorybookHelpers("oscd-app-bar", {
-  excludeCategories: ["slots"],
+const { args, argTypes, template } = getStorybookHelpers('oscd-app-bar', {
+  excludeCategories: ['slots'],
 });
 
 const meta: Meta<OscdAppBar & typeof args> = {
-  title: "Library/App Bar",
-  component: "oscd-app-bar",
-  tags: ["autodocs"],
+  title: 'Library/App Bar',
+  component: 'oscd-app-bar',
+  tags: ['autodocs'],
   decorators: [scopedWcDecorator, storybookHelperDecorator],
 
   args,
   parameters: {
-    layout: "fullscreen",
+    layout: 'fullscreen',
     scopedElements: {
-      "oscd-app-bar": OscdAppBar,
-      "oscd-divider": OscdDivider,
-      "oscd-filled-icon-button": OscdFilledIconButton,
-      "oscd-icon": OscdIcon,
-      "oscd-list": OscdList,
-      "oscd-list-item": OscdListItem,
-      "oscd-tabs": OscdTabs,
-      "oscd-secondary-tab": OscdSecondaryTab,
+      'oscd-app-bar': OscdAppBar,
+      'oscd-divider': OscdDivider,
+      'oscd-filled-icon-button': OscdFilledIconButton,
+      'oscd-icon': OscdIcon,
+      'oscd-list': OscdList,
+      'oscd-list-item': OscdListItem,
+      'oscd-tabs': OscdTabs,
+      'oscd-secondary-tab': OscdSecondaryTab,
     },
   },
-  render: ({ title, subHeader, ...rest }) => {
-    return html` ${template(
+  render: ({ title, subHeader, ...rest }) =>
+    html` ${template(
       rest,
       html`<oscd-filled-icon-button
           slot="actionStart"
           aria-label="Menu"
-          @click=${() => console.log("actionStart clicked")}
+          @click=${(event: Event) => {
+            action('actionStart clicked')({ event });
+          }}
         >
           <oscd-icon>menu</oscd-icon></oscd-filled-icon-button
         >
@@ -53,19 +56,20 @@ const meta: Meta<OscdAppBar & typeof args> = {
         <oscd-filled-icon-button
           slot="actionEnd"
           aria-label="Menu"
-          @click=${() => console.log("actionStart clicked")}
+          @click=${(event: Event) => {
+            action('actionEnd clicked')({ event });
+          }}
         >
           <oscd-icon>more_vert</oscd-icon></oscd-filled-icon-button
         >
         ${subHeader && subHeader()}
       </oscd-app-bar>
-    `
-    )}`;
-  },
+    `,
+    )}`,
   argTypes: {
     title: {
-      control: { type: "text" },
-      description: "App Bar Title",
+      control: { type: 'text' },
+      description: 'App Bar Title',
     },
     ...argTypes,
   },
@@ -76,13 +80,13 @@ type Story = StoryObj;
 
 export const Default: Story = {
   args: {
-    title: "My App Bar",
+    title: 'My App Bar',
   },
 };
 
 export const WithSubHeader: Story = {
   args: {
-    title: "My App Bar (with subheader)",
+    title: 'My App Bar (with subheader)',
     subHeader: () => html`
       <oscd-tabs style="width:100%;">
         <oscd-secondary-tab>Video</oscd-secondary-tab>

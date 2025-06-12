@@ -1,14 +1,14 @@
-import { ScopedElementsMixin } from "@open-wc/scoped-elements/lit-element.js";
-import { property } from "lit/decorators.js";
-import { LitElement, html } from "lit";
-import { DecoratorFunction } from "storybook/internal/types";
-import { html as staticHtml, unsafeStatic } from "lit/static-html.js";
+import { ScopedElementsMixin } from '@open-wc/scoped-elements/lit-element.js';
+import { property } from 'lit/decorators.js';
+import { LitElement, html } from 'lit';
+import { DecoratorFunction } from 'storybook/internal/types';
+import { html as staticHtml, unsafeStatic } from 'lit/static-html.js';
 
 const documentQuerySelectorFn = document.querySelector;
 
 export const scopedWcDecorator: DecoratorFunction = (storyFn, context) => {
-  const scopedElements = context.parameters["scopedElements"] || {};
-  const storyArgs = context["args"] || {};
+  const scopedElements = context.parameters.scopedElements || {};
+  const storyArgs = context.args || {};
 
   // Generate a unique tag name to avoid redefinition errors
   const tagName = `dynamic-wrapper-${context.id}`;

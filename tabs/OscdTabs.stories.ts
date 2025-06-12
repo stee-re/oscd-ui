@@ -1,31 +1,31 @@
-import { html } from "lit";
-import type { Meta, StoryObj } from "@storybook/web-components";
-import { withActions } from "@storybook/addon-actions/decorator";
-import { OscdTabs } from "tabs/OscdTabs";
-import { OscdPrimaryTab } from "tabs/OscdPrimaryTab";
-import { OscdSecondaryTab } from "tabs/OscdSecondaryTab";
-import { scopedWcDecorator } from "utils/storybook/scopedWcDecorator.js";
+import { html } from 'lit';
+import type { Meta, StoryObj } from '@storybook/web-components';
+import { withActions } from '@storybook/addon-actions/decorator';
+import { OscdTabs } from 'tabs/OscdTabs';
+import { OscdPrimaryTab } from 'tabs/OscdPrimaryTab';
+import { OscdSecondaryTab } from 'tabs/OscdSecondaryTab';
+import { scopedWcDecorator } from 'utils/storybook/scopedWcDecorator.js';
 import {
   getStorybookHelpers,
   storybookHelperDecorator,
-} from "utils/storybook/getStorybookHelpers.js";
+} from 'utils/storybook/getStorybookHelpers.js';
 
-const { args, argTypes, template, events } = getStorybookHelpers("oscd-tabs");
+const { args, argTypes, template, events } = getStorybookHelpers('oscd-tabs');
 
 const meta: Meta<OscdTabs> = {
-  title: "Library/Tabs/Tabs",
-  component: "oscd-tabs",
-  tags: ["autodocs"],
+  title: 'Library/Tabs/Tabs',
+  component: 'oscd-tabs',
+  tags: ['autodocs'],
   decorators: [withActions, scopedWcDecorator, storybookHelperDecorator],
   parameters: {
-    layout: "centered",
+    layout: 'centered',
     scopedElements: {
-      "oscd-tabs": OscdTabs,
-      "oscd-primary-tab": OscdPrimaryTab,
-      "oscd-secondary-tab": OscdSecondaryTab,
+      'oscd-tabs': OscdTabs,
+      'oscd-primary-tab': OscdPrimaryTab,
+      'oscd-secondary-tab': OscdSecondaryTab,
     },
     actions: {
-      handles: ["click", ...events],
+      handles: ['click', ...events],
     },
   },
   argTypes,
@@ -36,23 +36,23 @@ type Story = StoryObj;
 
 export const WithPrimaryTabs: Story = {
   args,
-  render: (argz) =>
+  render: argz =>
     template(
       argz,
       html`
         <oscd-primary-tab>Tab 1</oscd-primary-tab>
         <oscd-primary-tab>Tab 2</oscd-primary-tab>
-      `
+      `,
     ),
 };
 export const WithSecondaryTabs: Story = {
   args,
-  render: (argz) =>
+  render: argz =>
     template(
       argz,
       html`
         <oscd-secondary-tab>Tab 1</oscd-secondary-tab>
         <oscd-secondary-tab>Tab 2</oscd-secondary-tab>
-      `
+      `,
     ),
 };

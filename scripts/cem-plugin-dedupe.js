@@ -7,8 +7,8 @@ export function dedupeAndFilterPlugin() {
       manifest.modules.forEach((_module) => {
         console.log(" dedupeModule: ", _module);
         _module.declarations = (_module.declarations || []).filter((decl) => {
-          if (!decl.tagName) return false;
-          if (seenTags.has(decl.tagName)) return false;
+          if (!decl.tagName) {return false;}
+          if (seenTags.has(decl.tagName)) {return false;}
           seenTags.add(decl.tagName);
           return true;
         });

@@ -1,43 +1,43 @@
-import { html } from "lit";
-import type { Meta, StoryObj } from "@storybook/web-components";
+import { html } from 'lit';
+import type { Meta, StoryObj } from '@storybook/web-components';
 
-import { OscdNavigationDrawerHeader } from "navigation-drawer/OscdNavigationDrawerHeader";
-import { OscdElevation } from "elevation/OscdElevation";
-import { scopedWcDecorator } from "utils/storybook/scopedWcDecorator.js";
+import { OscdNavigationDrawerHeader } from 'navigation-drawer/OscdNavigationDrawerHeader';
+import { OscdElevation } from 'elevation/OscdElevation';
+import { scopedWcDecorator } from 'utils/storybook/scopedWcDecorator.js';
 import {
   getStorybookHelpers,
   storybookHelperDecorator,
-} from "utils/storybook/getStorybookHelpers.js";
+} from 'utils/storybook/getStorybookHelpers.js';
 
 const { args, argTypes, template } = getStorybookHelpers(
-  "oscd-navigation-drawer-header"
+  'oscd-navigation-drawer-header',
 );
 
 const meta: Meta<OscdNavigationDrawerHeader & { textContent: string }> = {
-  title: "Library/Navigation Drawer/Navigation Drawer Header",
-  component: "oscd-navigation-drawer-header",
-  tags: ["autodocs"],
+  title: 'Library/Navigation Drawer/Navigation Drawer Header',
+  component: 'oscd-navigation-drawer-header',
+  tags: ['autodocs'],
   decorators: [scopedWcDecorator, storybookHelperDecorator],
   parameters: {
-    layout: "centered",
+    layout: 'centered',
     scopedElements: {
-      "oscd-navigation-drawer-header": OscdNavigationDrawerHeader,
-      "oscd-elevation": OscdElevation,
+      'oscd-navigation-drawer-header': OscdNavigationDrawerHeader,
+      'oscd-elevation': OscdElevation,
     },
   },
 
   render: ({ textContent, ...argz }) => html`
     <div style="position: relative;--md-elevation-level: 2;">
-      ${template(args, html`${textContent}`)}
+      ${template(argz, html`${textContent}`)}
       <oscd-elevation></oscd-elevation>
     </div>
   `,
   argTypes: {
     ...argTypes,
     textContent: {
-      control: { type: "text" },
-      name: "Text Content",
-      description: "Header label",
+      control: { type: 'text' },
+      name: 'Text Content',
+      description: 'Header label',
     },
   },
 };
@@ -48,6 +48,6 @@ type Story = StoryObj;
 export const Default: Story = {
   args: {
     ...args,
-    textContent: "Navigation Header",
+    textContent: 'Navigation Header',
   },
 };

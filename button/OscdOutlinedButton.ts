@@ -9,11 +9,11 @@
  * Copyright 2025 OMICRON Electronics GmbH
  * SPDX-License-Identifier: Apache-2.0
  */
-import { CSSResultOrNative } from "lit";
+import { CSSResultOrNative } from 'lit';
 
-import { OutlinedButton } from "@material/web/button/internal/outlined-button.js";
-import { styles as outlinedStyles } from "@material/web/button/internal/outlined-styles.js";
-import { styles as sharedStyles } from "@material/web/button/internal/shared-styles.js";
+import { OutlinedButton } from '@material/web/button/internal/outlined-button.js';
+import { styles as outlinedStyles } from '@material/web/button/internal/outlined-styles.js';
+import { styles as sharedStyles } from '@material/web/button/internal/shared-styles.js';
 
 /**
  * @tag "oscd-outlined-button"
@@ -33,7 +33,7 @@ import { styles as sharedStyles } from "@material/web/button/internal/shared-sty
  * - View all
  * - Add to cart
  * - Take out of trash
- * 
+ *
  * @event click Fired when the user clicks the button.
  *
  * @final

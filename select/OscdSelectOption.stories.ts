@@ -1,30 +1,30 @@
-import { html } from "lit";
-import type { Meta, StoryObj } from "@storybook/web-components";
-import { withActions } from "@storybook/addon-actions/decorator";
-import { OscdSelectOption } from "select/OscdSelectOption";
-import { OscdElevation } from "elevation/OscdElevation";
-import { scopedWcDecorator } from "utils/storybook/scopedWcDecorator.js";
+import { html } from 'lit';
+import type { Meta, StoryObj } from '@storybook/web-components';
+import { withActions } from '@storybook/addon-actions/decorator';
+import { OscdSelectOption } from 'select/OscdSelectOption';
+import { OscdElevation } from 'elevation/OscdElevation';
+import { scopedWcDecorator } from 'utils/storybook/scopedWcDecorator.js';
 import {
   getStorybookHelpers,
   storybookHelperDecorator,
-} from "utils/storybook/getStorybookHelpers.js";
+} from 'utils/storybook/getStorybookHelpers.js';
 
 const { args, argTypes, template, events } =
-  getStorybookHelpers("oscd-select-option");
+  getStorybookHelpers('oscd-select-option');
 
 const meta: Meta<OscdSelectOption & { textContent: string }> = {
-  title: "Library/Selects/Select Option",
-  component: "oscd-select-option",
-  tags: ["autodocs"],
+  title: 'Library/Selects/Select Option',
+  component: 'oscd-select-option',
+  tags: ['autodocs'],
   decorators: [withActions, scopedWcDecorator, storybookHelperDecorator],
   parameters: {
-    layout: "centered",
+    layout: 'centered',
     scopedElements: {
-      "oscd-select-option": OscdSelectOption,
-      "oscd-elevation": OscdElevation,
+      'oscd-select-option': OscdSelectOption,
+      'oscd-elevation': OscdElevation,
     },
     actions: {
-      handles: ["click", ...events],
+      handles: ['click', ...events],
     },
   },
   render: ({ textContent, ...argz }) => html`
@@ -36,9 +36,9 @@ const meta: Meta<OscdSelectOption & { textContent: string }> = {
   argTypes: {
     ...argTypes,
     textContent: {
-      name: "Text Content",
-      control: { type: "text" },
-      description: "Option label",
+      name: 'Text Content',
+      control: { type: 'text' },
+      description: 'Option label',
     },
   },
 };
@@ -49,6 +49,6 @@ type Story = StoryObj;
 export const Default: Story = {
   args: {
     ...args,
-    textContent: "Select option",
+    textContent: 'Select option',
   },
 };

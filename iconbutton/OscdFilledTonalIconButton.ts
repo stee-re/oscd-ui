@@ -9,10 +9,10 @@
  * Copyright 2025 OMICRON Electronics GmbH
  * SPDX-License-Identifier: Apache-2.0
  */
-import { CSSResultOrNative } from "lit";
-import { styles } from "@material/web/iconbutton/internal/filled-tonal-styles.js";
-import { IconButton } from "@material/web/iconbutton/internal/icon-button.js";
-import { styles as sharedStyles } from "@material/web/iconbutton/internal/shared-styles.js";
+import { CSSResultOrNative } from 'lit';
+import { styles } from '@material/web/iconbutton/internal/filled-tonal-styles.js';
+import { IconButton } from '@material/web/iconbutton/internal/icon-button.js';
+import { styles as sharedStyles } from '@material/web/iconbutton/internal/shared-styles.js';
 
 /**
  * @tag oscd-filled-tonal-icon-button
@@ -38,8 +38,8 @@ export class OscdFilledTonalIconButton extends IconButton {
   protected override getRenderClasses() {
     return {
       ...super.getRenderClasses(),
-      "filled-tonal": true,
-      "toggle-filled-tonal": this.toggle,
+      'filled-tonal': true,
+      'toggle-filled-tonal': this.toggle,
     };
   }
 }

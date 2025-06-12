@@ -1,10 +1,10 @@
-import { OscdMenuItem } from "./OscdMenuItem.js";
+import { OscdMenuItem } from './OscdMenuItem.js';
 
 declare global {
   interface HTMLElementTagNameMap {
-    "oscd-menu-item": OscdMenuItem;
+    'oscd-menu-item': OscdMenuItem;
   }
 }
 
-customElements.define("oscd-menu-item", OscdMenuItem);
+customElements.define('oscd-menu-item', OscdMenuItem);
 export { OscdMenuItem };

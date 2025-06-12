@@ -9,12 +9,12 @@
  * Copyright 2025 OMICRON Electronics GmbH
  * SPDX-License-Identifier: Apache-2.0
  */
-import { CSSResultOrNative } from "lit";
-import { MenuItemEl } from "@material/web/menu/internal/menuitem/menu-item.js";
-import { styles } from "@material/web/menu/internal/menuitem/menu-item-styles.js";
+import { CSSResultOrNative } from 'lit';
+import { MenuItemEl } from '@material/web/menu/internal/menuitem/menu-item.js';
+import { styles } from '@material/web/menu/internal/menuitem/menu-item-styles.js';
 
-export { type MenuItem } from "@material/web/menu/internal/controllers/menuItemController.js";
-export { type CloseMenuEvent } from "@material/web/menu/internal/controllers/shared.js";
+export { type MenuItem } from '@material/web/menu/internal/controllers/menuItemController.js';
+export { type CloseMenuEvent } from '@material/web/menu/internal/controllers/shared.js';
 
 /**
  * @tag oscd-menu-item

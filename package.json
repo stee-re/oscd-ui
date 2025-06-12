@@ -4,6 +4,8 @@
   "description": "UI Web Components set for OpenSCD",
   "type": "module",
   "scripts": {
+    "lint": "eslint . --ext .ts --ext .js && prettier \"**/*.ts\" --check --ignore-path .gitignore",
+    "format": "eslint . --ext .ts --ext .js --fix && prettier \"**/*.ts\" --write --ignore-path .gitignore",
     "build": "wireit",
     "build:watch": "tsc --pretty --watch",
     "test": "wtr",
@@ -13,7 +15,7 @@
     "test:visual": "test-storybook",
     "copy-material-custom-elements": "cp md-custom-elements.json node_modules/@material/web/custom-elements.json",
     "custom-elements-manifest": "npm run copy-material-custom-elements && cem analyze",
-    "prepare": "npm run build"
+    "prepare": "husky"
   },
   "repository": {
     "type": "git",
@@ -55,6 +57,7 @@
     }
   },
   "dependencies": {
+    "@lit/reactive-element": "^2.1.0",
     "@material/web": "2.3.0",
     "@open-wc/scoped-elements": "^3.0.5",
     "@webcomponents/scoped-custom-element-registry": "^0.0.10",
@@ -62,9 +65,13 @@
     "tslib": "^2.4.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^19.8.1",
+    "@commitlint/config-conventional": "^19.8.1",
     "@custom-elements-manifest/analyzer": "^0.10.4",
-    "@open-wc/testing": "next",
+    "@open-wc/eslint-config": "^12.0.3",
+    "@open-wc/testing": "3.2.2",
     "@playwright/test": "^1.52.0",
+    "@storybook/addon-actions": "^8.6.14",
     "@storybook/addon-essentials": "^8.6.14",
     "@storybook/addon-interactions": "^8.6.14",
     "@storybook/blocks": "^8.6.14",
@@ -75,17 +82,24 @@
     "@storybook/web-components-vite": "^8.6.14",
     "@types/jasmine": "^4.0.3",
     "@types/node": "^22.15.18",
-    "@typescript-eslint/parser": "^8.32.1",
-    "@wc-toolkit/storybook-helpers": "^1.1.3",
+    "@typescript-eslint/eslint-plugin": "^7.16.0",
+    "@typescript-eslint/parser": "^7.16.0",
     "@wc-toolkit/cem-inheritance": "^1.0.4",
+    "@wc-toolkit/storybook-helpers": "^1.1.3",
     "@web/test-runner": "^0.18.2",
     "@web/test-runner-playwright": "^0.11.0",
     "@web/test-runner-visual-regression": "^0.6.6",
+    "concurrently": "^9.0.1",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-tsdoc": "^0.4.0",
+    "husky": "^9.1.7",
     "jasmine": "^4.5.0",
+    "lint-staged": "^16.1.0",
     "playwright": "^1.52.0",
     "prettier": "^3.5.3",
     "storybook": "^8.6.14",
-    "typescript": "^5.8.3",
+    "typescript": "^5.5.3",
     "vite-tsconfig-paths": "^5.1.4",
     "web-test-runner-jasmine": "^0.0.6",
     "wireit": "^0.14.12"
@@ -123,5 +137,102 @@
       "clean": "if-file-deleted",
       "dependencies": []
     }
+  },
+  "eslintConfig": {
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "lib": [
+        "es2018",
+        "dom"
+      ]
+    },
+    "extends": [
+      "@open-wc",
+      "prettier"
+    ],
+    "ignorePatterns": [
+      "*/**/*.js",
+      "*/**/*.d.ts"
+    ],
+    "env": {
+      "jasmine": true
+    },
+    "plugins": [
+      "@typescript-eslint",
+      "eslint-plugin-tsdoc"
+    ],
+    "rules": {
+      "no-unused-vars": "off",
+      "class-methods-use-this": [
+        "error",
+        {
+          "exceptMethods": [
+            "locale",
+            "render"
+          ]
+        }
+      ],
+      "@typescript-eslint/no-explicit-any": [
+        "error",
+        {
+          "ignoreRestArgs": true
+        }
+      ],
+      "import/no-extraneous-dependencies": [
+        "error",
+        {
+          "devDependencies": [
+            "**/*.test.ts",
+            "**/*.spec.ts",
+            "**/*.stories.ts",
+            "utils/storybook/*.ts",
+            "web-test-runner.config.js",
+            "test-runner.config.js",
+            "custom-elements-manifest.config.js"
+          ]
+        }
+      ],
+      "curly": [
+        "error",
+        "all"
+      ],
+      "@typescript-eslint/no-unused-vars": [
+        "error",
+        {
+          "argsIgnorePattern": "^_",
+          "varsIgnorePattern": "^_",
+          "destructuredArrayIgnorePattern": "^_"
+        }
+      ],
+      "import/no-unresolved": "off",
+      "import/extensions": [
+        "error",
+        "always",
+        {
+          "ignorePackages": true
+        }
+      ]
+    },
+    "overrides": [
+      {
+        "files": [
+          "**/*.spec.ts",
+          "**/*.test.ts"
+        ],
+        "rules": {
+          "no-unused-expressions": "off"
+        }
+      }
+    ]
+  },
+  "prettier": {
+    "singleQuote": true,
+    "arrowParens": "avoid"
+  },
+  "lint-staged": {
+    "*.ts": [
+      "eslint --fix --config package.json",
+      "prettier --write"
+    ]
   }
 }
