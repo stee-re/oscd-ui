@@ -30,7 +30,6 @@ export class Environment {
     };
 
     beforeAll(() => {
-      console.log('Setting up the fucking clock');
       jasmine.clock().install();
     });
 

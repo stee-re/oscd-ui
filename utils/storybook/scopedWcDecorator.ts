@@ -7,7 +7,7 @@ import { html as staticHtml, unsafeStatic } from 'lit/static-html.js';
 const documentQuerySelectorFn = document.querySelector;
 
 export const scopedWcDecorator: DecoratorFunction = (storyFn, context) => {
-  const scopedElements = context.parameters.scopedElements || {};
+  const { scopedElements } = context.parameters;
   const storyArgs = context.args || {};
 
   // Generate a unique tag name to avoid redefinition errors
@@ -26,7 +26,7 @@ export const scopedWcDecorator: DecoratorFunction = (storyFn, context) => {
   if (!customElements.get(tagName)) {
     class DynamicWrapper extends ScopedElementsMixin(LitElement) {
       static get scopedElements() {
-        return scopedElements;
+        return scopedElements || {};
       }
 
       @property({ type: Object })

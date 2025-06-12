@@ -62,7 +62,8 @@ export const Default: Story = {
     anchor: 'menu-button',
     open: false, // Default state of the menu
     '[@closed]': () => {
-      args.open = false;
+      // eslint-disable-next-line dot-notation
+      args['open'] = false;
     }, // Close the menu when the closed event is triggered),
   },
 };

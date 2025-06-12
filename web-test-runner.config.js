@@ -4,16 +4,16 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import { playwrightLauncher } from "@web/test-runner-playwright";
-import { jasmineTestRunnerConfig } from "web-test-runner-jasmine";
+import { playwrightLauncher } from '@web/test-runner-playwright';
+import { jasmineTestRunnerConfig } from 'web-test-runner-jasmine';
 
 export default {
   ...jasmineTestRunnerConfig(),
   nodeResolve: true,
-  files: ["**/*.spec.js", "!node_modules/"],
+  files: ['**/*spec.js', '!node_modules/'],
   browsers: [
     playwrightLauncher({
-      product: "chromium",
+      product: 'chromium',
       // Exclude since Firefox errors with "Touch is not defined"
       // product: 'firefox',
       // Exclude since Webkit errors with "Unknown error"
