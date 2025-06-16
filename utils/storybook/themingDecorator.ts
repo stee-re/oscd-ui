@@ -81,7 +81,7 @@ export const themingArgTypes = Object.entries(mdSysVarsWithOurDefaults).reduce(
 );
 
 export const themingArgs = Object.entries(mdSysVarsWithOurDefaults).reduce(
-  (acc: Partial<ArgTypes>, entry) => {
+  (acc: Partial<Args>, entry) => {
     const [key, value] = entry;
     return {
       ...acc,
